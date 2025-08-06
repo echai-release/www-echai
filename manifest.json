@@ -1,0 +1,27 @@
+{
+  "name": "EnterpriseChai - AI GTM Platform",
+  "short_name": "EnterpriseChai",
+  "description": "Turn research into revenue with LoopX. The AI sales workspace that helps you qualify leads faster, work smarter, and stay in control.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

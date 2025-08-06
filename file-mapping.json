@@ -1,0 +1,134 @@
+{
+  "deployment_mapping": {
+    "description": "Maps v0 project files to GitHub Pages repository structure",
+    "files_to_copy": {
+      "index.html": {
+        "source": "v0_project/index.html",
+        "destination": "repo_root/index.html",
+        "action": "replace",
+        "notes": "Main homepage - completely new design"
+      },
+      "about.html": {
+        "source": "v0_project/about.html",
+        "destination": "repo_root/about.html",
+        "action": "replace",
+        "notes": "About page with team information"
+      },
+      "loopx.html": {
+        "source": "v0_project/loopx.html",
+        "destination": "repo_root/loopx.html",
+        "action": "replace",
+        "notes": "LoopX product page"
+      },
+      "whispr.html": {
+        "source": "v0_project/whispr.html",
+        "destination": "repo_root/whispr.html",
+        "action": "replace",
+        "notes": "Whispr product page"
+      },
+      "concierge.html": {
+        "source": "v0_project/concierge.html",
+        "destination": "repo_root/concierge.html",
+        "action": "replace",
+        "notes": "Concierge product page"
+      },
+      "blog.html": {
+        "source": "v0_project/blog.html",
+        "destination": "repo_root/blog.html",
+        "action": "replace",
+        "notes": "Blog listing page"
+      },
+      "docs.html": {
+        "source": "v0_project/docs.html",
+        "destination": "repo_root/docs.html",
+        "action": "replace",
+        "notes": "Documentation page"
+      },
+      "careers.html": {
+        "source": "v0_project/careers.html",
+        "destination": "repo_root/careers.html",
+        "action": "replace",
+        "notes": "Careers page"
+      },
+      "terms.html": {
+        "source": "v0_project/terms.html",
+        "destination": "repo_root/terms.html",
+        "action": "replace",
+        "notes": "Terms of service"
+      },
+      "privacy.html": {
+        "source": "v0_project/privacy.html",
+        "destination": "repo_root/privacy.html",
+        "action": "replace",
+        "notes": "Privacy policy"
+      },
+      "css/styles.css": {
+        "source": "v0_project/css/styles.css",
+        "destination": "repo_root/css/styles.css",
+        "action": "replace",
+        "notes": "All CSS styles - completely new"
+      },
+      "js/main.js": {
+        "source": "v0_project/js/main.js",
+        "destination": "repo_root/js/main.js",
+        "action": "replace",
+        "notes": "All JavaScript functionality"
+      },
+      "sitemap.xml": {
+        "source": "v0_project/sitemap.xml",
+        "destination": "repo_root/sitemap.xml",
+        "action": "replace",
+        "notes": "SEO sitemap"
+      },
+      "robots.txt": {
+        "source": "v0_project/robots.txt",
+        "destination": "repo_root/robots.txt",
+        "action": "replace",
+        "notes": "Search engine instructions"
+      },
+      "manifest.json": {
+        "source": "v0_project/manifest.json",
+        "destination": "repo_root/manifest.json",
+        "action": "replace",
+        "notes": "PWA manifest"
+      }
+    },
+    "files_to_keep": {
+      "images/": {
+        "action": "preserve",
+        "notes": "Keep all existing images from current repo"
+      },
+      "CNAME": {
+        "action": "preserve_if_exists",
+        "notes": "Custom domain configuration"
+      },
+      ".gitignore": {
+        "action": "preserve_if_exists",
+        "notes": "Git ignore rules"
+      },
+      "README.md": {
+        "action": "preserve_or_update",
+        "notes": "Repository documentation"
+      }
+    },
+    "verification_checklist": [
+      "Footer shows 'Resources' section (not 'Info')",
+      "All navigation links work correctly",
+      "Mobile responsiveness is maintained",
+      "Cookie preferences modal functions",
+      "All product pages load properly",
+      "SEO meta tags are present",
+      "Images load from existing images/ folder",
+      "Contact forms and CTAs work",
+      "Page performance is acceptable"
+    ],
+    "key_changes_v25": {
+      "footer": "Updated to show 'Resources' instead of 'Info'",
+      "roi_section": "Three metrics with color-coded containers",
+      "solution_section": "Clean feature cards with standardized icons",
+      "seo": "Complete structured data and meta tag implementation",
+      "performance": "Optimized CSS and JavaScript",
+      "accessibility": "Improved ARIA labels and semantic HTML"
+    }
+  }
+}

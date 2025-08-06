@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Documentation - EnterpriseChai AI Platform</title>
+    <meta name="title" content="Documentation - EnterpriseChai AI Platform">
+    <meta name="description" content="Real-Time Conversational Intelligence for Exceptional Customer Experiences. Documentation, setup guides, and FAQ for EnterpriseChai AI products.">
+    <meta name="keywords" content="EnterpriseChai documentation, AI setup, conversational intelligence, customer success, FAQ, support">
+    <meta name="author" content="EnterpriseChai">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enterprisechai.com/docs.html">
+    <meta property="og:title" content="Documentation - EnterpriseChai AI Platform">
+    <meta property="og:description" content="Real-Time Conversational Intelligence for Exceptional Customer Experiences. Documentation, setup guides, and FAQ for EnterpriseChai AI products.">
+    <meta property="og:image" content="https://enterprisechai.com/public/images/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enterprisechai.com/docs.html">
+    <meta property="twitter:title" content="Documentation - EnterpriseChai AI Platform">
+    <meta property="twitter:description" content="Real-Time Conversational Intelligence for Exceptional Customer Experiences. Documentation, setup guides, and FAQ for EnterpriseChai AI products.">
+    <meta property="twitter:image" content="https://enterprisechai.com/public/images/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enterprisechai.com/docs.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which browsers are currently supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "EnterpriseChai supports all modern browsers including Chrome, Firefox, Safari, and Edge."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I integrate the AI assistant into my website?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Integration is simple with our JavaScript SDK. Follow our setup guide for step-by-step instructions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What data security measures are in place?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We implement enterprise-grade security with end-to-end encryption and SOC 2 compliance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I customize the AI responses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can train the AI with your specific knowledge base and customize response patterns."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" aria-label="EnterpriseChai Home">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai - AI GTM Platform" width="200" height="40">
+                    </a>
+                </div>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="loopx.html" class="dropdown-item">
+                                <span>LoopX</span>
+                                <span class="status">Pilot</span>
+                            </a>
+                            <a href="whispr.html" class="dropdown-item">
+                                <span>Whispr</span>
+                                <span class="status">Beta</span>
+                            </a>
+                            <a href="concierge.html" class="dropdown-item">
+                                <span>Concierge</span>
+                                <span class="status">Live</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+                    <div class="nav-actions">
+                        <a href="https://app.enterprisechai.com/login" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+                <div class="mobile-nav-content">
+                    <div class="mobile-nav-section">
+                        <p class="mobile-nav-title">Products</p>
+                        <a href="loopx.html" class="mobile-nav-link">LoopX <span class="status">(Pilot)</span></a>
+                        <a href="whispr.html" class="mobile-nav-link">Whispr <span class="status">(Beta)</span></a>
+                        <a href="concierge.html" class="mobile-nav-link">Concierge <span class="status">(Live)</span></a>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="docs.html" class="mobile-nav-link">Docs</a>
+                    <div class="mobile-nav-actions">
+                        <a href="https://app.enterprisechai.com/login" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="section" style="background-color: white; padding-top: 6rem; padding-bottom: 8rem;">
+            <div class="container">
+                <div class="section-header">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="color: #8b5cf6; font-weight: 500;">Documentation</span>
+                    </div>
+                    <h1 class="section-title">Documentation</h1>
+                    <p class="section-subtitle">Real-Time Conversational Intelligence for Exceptional Customer Experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beta Setup Section -->
+        <section class="section" style="background-color: #f9fafb; padding-top: 4rem;">
+            <div class="container" style="max-width: 4xl;">
+                <div style="background-color: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #8b5cf6; margin-right: 0.75rem;">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10,9 9,9 8,9"></polyline>
+                        </svg>
+                        <h2 style="font-size: 1.5rem; font-weight: 500; color: #111827; margin: 0;">
+                            Preparing for Beta Success: Essential Information and Setup Requirements
+                        </h2>
+                    </div>
+
+                    <p style="color: #6b7280; margin-bottom: 1.5rem; font-weight: 300; line-height: 1.6;">
+                        Joining our beta program? Here's a quick checklist to ensure you're ready to hit the ground running. From
+                        setup requirements to necessary information, we'll guide you through each step to make your beta
+                        experience seamless and impactful.
+                    </p>
+
+                    <a href="#" class="btn btn-outline" style="background-color: #111827; color: white; border-color: #111827;">
+                        Read more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background-color: white;">
+            <div class="container" style="max-width: 4xl;">
+                <div class="section-header">
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #8b5cf6; font-weight: 500;">FAQ</span>
+                    </div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Real-Time Conversational Intelligence for Exceptional Customer Experiences</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: 500; color: #111827; margin-bottom: 1.5rem; display: flex; align-items: center;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">1.</span>
+                        Product Overview
+                    </h3>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- FAQ Item 1 -->
+                    <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 1rem; margin-top: 0.25rem;">
+                                <div style="width: 1.5rem; height: 1.5rem; background-color: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="color: #8b5cf6; font-size: 0.875rem; font-weight: 500;">1</span>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: 1.125rem; font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Which browsers are currently supported?</h4>
+                                <p style="color: #6b7280; font-weight: 300; line-height: 1.6; margin: 0;">EnterpriseChai supports all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 1rem; margin-top: 0.25rem;">
+                                <div style="width: 1.5rem; height: 1.5rem; background-color: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="color: #8b5cf6; font-size: 0.875rem; font-weight: 500;">2</span>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: 1.125rem; font-weight: 500; color: #111827; margin-bottom: 0.75rem;">How do I integrate the AI assistant into my website?</h4>
+                                <p style="color: #6b7280; font-weight: 300; line-height: 1.6; margin: 0;">Integration is simple with our JavaScript SDK. Follow our setup guide for step-by-step instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 1rem; margin-top: 0.25rem;">
+                                <div style="width: 1.5rem; height: 1.5rem; background-color: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="color: #8b5cf6; font-size: 0.875rem; font-weight: 500;">3</span>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: 1.125rem; font-weight: 500; color: #111827; margin-bottom: 0.75rem;">What data security measures are in place?</h4>
+                                <p style="color: #6b7280; font-weight: 300; line-height: 1.6; margin: 0;">We implement enterprise-grade security with end-to-end encryption and SOC 2 compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 1rem; margin-top: 0.25rem;">
+                                <div style="width: 1.5rem; height: 1.5rem; background-color: #e9d5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <span style="color: #8b5cf6; font-size: 0.875rem; font-weight: 500;">4</span>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: 1.125rem; font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Can I customize the AI responses?</h4>
+                                <p style="color: #6b7280; font-weight: 300; line-height: 1.6; margin: 0;">Yes, you can train the AI with your specific knowledge base and customize response patterns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <div style="background-color: #f9fafb; padding: 2rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #8b5cf6; margin: 0 auto 1rem;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <path d="M12 17h.01"></path>
+                        </svg>
+                        <h3 style="font-size: 1.25rem; font-weight: 500; color: #111827; margin-bottom: 1rem;">Need More Help?</h3>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem; font-weight: 300;">
+                            Can't find what you're looking for? Our support team is here to help.
+                        </p>
+                        <a href="mailto:support@enterprisechai.com" class="btn btn-primary">
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai" width="160" height="32">
+                    </div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loopx.html">LoopX</a></li>
+                        <li><a href="whispr.html">Whispr</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="docs.html">Docs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><button id="cookie-preferences" class="footer-link-button">Cookie Preferences</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-modal" class="cookie-modal" style="display: none;">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3>Cookie Preferences</h3>
+                <button id="cookie-modal-close" class="cookie-modal-close" aria-label="Close cookie preferences">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <p class="cookie-modal-description">
+                We use different types of cookies to optimize your experience on our website. Choose which cookies you allow us to use.
+            </p>
+            <div class="cookie-options">
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <h4>Essential Cookies</h4>
+                        <label class="toggle disabled">
+                            <input type="checkbox" checked disabled>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-option-description">These cookies are necessary for the website to function and cannot be disabled.</p>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <h4>Analytics Cookies</h4>
+                        <label class="toggle">
+                            <input type="checkbox" id="analytics-cookies" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-option-description">Help us understand how visitors interact with our website by collecting anonymous information.</p>
+                    <p class="cookie-option-details"><strong>Used for:</strong> Google Analytics, page views, user behavior analysis</p>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <h4>Marketing Cookies</h4>
+                        <label class="toggle">
+                            <input type="checkbox" id="marketing-cookies" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-option-description">Used to deliver personalized content and advertisements relevant to you.</p>
+                    <p class="cookie-option-details"><strong>Used for:</strong> Chatbot personalization, targeted content, advertising</p>
+                </div>
+            </div>
+            <div class="cookie-modal-actions">
+                <button id="decline-all" class="btn btn-outline">Decline All</button>
+                <button id="accept-all" class="btn btn-outline">Accept All</button>
+                <button id="save-preferences" class="btn btn-primary">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
