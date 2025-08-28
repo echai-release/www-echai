@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancing Conversational AI with Visual Information | EnterpriseChai Blog</title>
+    <meta name="description" content="Explore advanced techniques for integrating visual information into conversational AI systems, including image recognition, visual context understanding, and multi-modal AI applications.">
+    <meta name="keywords" content="conversational AI, visual AI, image recognition, multi-modal AI, AI technology">
+    <meta name="author" content="Ziba Atak">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enterprisechai.com/enhancing-conversational-ai-with-visual-information">
+    <meta property="og:title" content="Enhancing Conversational AI with Visual Information">
+    <meta property="og:description" content="Explore advanced techniques for integrating visual information into conversational AI systems, including image recognition, visual context understanding, and multi-modal AI applications.">
+    <meta property="og:image" content="https://enterprisechai.com/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enterprisechai.com/enhancing-conversational-ai-with-visual-information">
+    <meta property="twitter:title" content="Enhancing Conversational AI with Visual Information">
+    <meta property="twitter:description" content="Explore advanced techniques for integrating visual information into conversational AI systems, including image recognition, visual context understanding, and multi-modal AI applications.">
+    <meta property="twitter:image" content="https://enterprisechai.com/images/og-image.png">
+
+    <link rel="canonical" href="https://enterprisechai.com/enhancing-conversational-ai-with-visual-information">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/cookie-consent.css" rel="stylesheet" type="text/css">
+    <link href="css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
+    <!-- Widget Script -->
+    <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const testConfig = { 
+            EChaiServer: 'https://backend.enterprisechai.com/chatbot',
+            accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3NzI3Mzc2NzF9.4ufQQ1DdWom5zJU9ol42iOdTEazIGzqCjg4v-31aXZA',
+            theme: 'light',
+            aiMessageIconHoverText: 'Ask EChai',
+            aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
+        }; 
+        window.mountEChaiWidget(testConfig);
+        });
+    </script>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" aria-label="EnterpriseChai Home">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai - AI GTM Platform" width="200" height="40">
+                    </a>
+                </div>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="loopx.html" class="dropdown-item">
+                                <span>LoopX</span>
+                                <span class="status">Pilot</span>
+                            </a>
+                            <a href="whispr.html" class="dropdown-item">
+                                <span>Whispr</span>
+                                <span class="status">Beta</span>
+                            </a>
+                            <a href="concierge.html" class="dropdown-item">
+                                <span>Concierge</span>
+                                <span class="status">Live</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+                    <div class="nav-actions">
+                        <a href="https://app.enterprisechai.com/login" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+                <div class="mobile-nav-content">
+                    <div class="mobile-nav-section">
+                        <p class="mobile-nav-title">Products</p>
+                        <a href="loopx.html" class="mobile-nav-link">LoopX <span class="status">(Pilot)</span></a>
+                        <a href="whispr.html" class="mobile-nav-link">Whispr <span class="status">(Beta)</span></a>
+                        <a href="concierge.html" class="mobile-nav-link">Concierge <span class="status">(Live)</span></a>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="docs.html" class="mobile-nav-link">Docs</a>
+                    <div class="mobile-nav-actions">
+                        <a href="https://app.enterprisechai.com/login" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section style="background-color: white; padding: 4rem 0;">
+        <div class="container">
+            <a href="blog.html" style="display: inline-flex; align-items: center; color: #8b5cf6; text-decoration: none; margin-bottom: 2rem; font-weight: 500;">
+                ← Back to Blog
+            </a>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: black; margin-bottom: 1.5rem; line-height: 1.1;">
+                    <h1>Enhancing Conversational AI with Visual Information: A Deep Dive into Image Integration Strategies</h1>
+                    <p style="font-size: 1.25rem; color: #6b7280; font-weight: 300; line-height: 1.6; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
+                        Explore advanced techniques for integrating visual information into conversational AI systems, including image recognition, visual context understanding, and multi-modal AI applications.
+                    </p>
+                    <div style="display: flex; align-items: center; justify-content: center; color: #6b7280;">
+                        <span style="font-weight: 500;">Ziba Atak</span>
+                        <span style="margin: 0 0.75rem;">•</span>
+                        <span>November 12, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="section">
+            <div class="container">
+                <div class="feature-card">
+                    <!-- Replaced Tailwind classes with custom CSS classes for proper styling -->
+                    <div class="article-content">
+                        <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">
+                            The integration of visual information into conversational AI represents a paradigm shift in how we approach human-computer interaction. As businesses increasingly rely on AI to handle complex customer interactions, the ability to process and understand visual content has become crucial for creating truly intelligent and helpful AI assistants.
+                        </p>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">The Visual Revolution in AI</h2>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Traditional conversational AI systems were limited to text-based interactions, creating a significant gap between human communication patterns and AI capabilities. Humans naturally use visual cues, gestures, and images to convey complex information, but AI systems couldn't participate in this rich, multi-modal communication.
+                        </p>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Recent advances in computer vision and multi-modal AI have changed this landscape dramatically. Modern AI systems can now:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Analyze and describe images in natural language</li>
+                            <li>Extract text and data from visual documents</li>
+                            <li>Understand spatial relationships and visual context</li>
+                            <li>Generate visual content based on textual descriptions</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Key Integration Strategies</h2>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">1. Multi-Modal Input Processing</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            The foundation of visual AI integration lies in creating systems that can seamlessly process both textual and visual inputs simultaneously. This requires sophisticated architectures that can:
+                        </p>
+
+                        <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin: 1.5rem 0;">
+                        <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Technical Implementation:</h4>
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                           <li style="margin-bottom: 0.5rem;">Unified embedding spaces for text and images</li>
+                            <li style="margin-bottom: 0.5rem;">Cross-modal attention mechanisms</li>
+                            <li style="margin-bottom: 0.5rem;">Real-time image preprocessing and feature extraction</li>
+                            <li style="margin-bottom: 0.5rem;">Context-aware visual understanding</li>
+                        </ul>
+                        
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">2. Visual Context Understanding</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Beyond simple image recognition, advanced AI systems must understand the context and relevance of visual information within the broader conversation. This involves:
+                        </p>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Spatial Intelligence</h4>
+                                <p style="margin-bottom: 1.5rem;">
+                                    Understanding object relationships, layouts, and spatial hierarchies within images to provide contextually relevant responses.
+                                </p>
+                            </div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                                <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                    <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Temporal Awareness</h4>
+                                <p style="margin-bottom: 1.5rem;">
+                                    Tracking visual elements across conversation history to maintain context and provide coherent, continuous assistance.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">3. Document Intelligence</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            One of the most practical applications of visual AI in business contexts is document intelligence – the ability to understand and extract information from complex documents, forms, and visual layouts.
+                        </p>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Real-World Applications</h2>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Customer Support Enhancement</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Visual AI transforms customer support by enabling agents to quickly understand and respond to image-based queries:
+                        </p>
+
+                        <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin: 1.5rem 0;">
+                            <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Use Case Example:</h4>
+                            <p style="margin-bottom: 1.5rem;">
+                                "A customer uploads a screenshot of an error message. The AI instantly recognizes the error type, identifies the specific software version from visual cues, and provides targeted troubleshooting steps without requiring the customer to describe the problem in text."
+                            </p>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Sales Process Optimization</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            In sales contexts, visual AI can analyze product images, technical diagrams, and customer-provided visuals to:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">Identify customer needs from visual specifications</li>
+                            <li style="margin-bottom: 0.5rem;">Recommend compatible products and solutions</li>
+                            <li style="margin-bottom: 0.5rem;">Generate visual proposals and comparisons</li>
+                            <li style="margin-bottom: 0.5rem;">Automate quote generation from visual requirements</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Implementation Challenges and Solutions</h2>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Performance Optimization</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Visual processing is computationally intensive. Successful implementations require careful optimization:
+                        </p>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Challenges:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">High computational requirements</li>
+                                    <li style="margin-bottom: 0.5rem;">Latency in real-time processing</li>
+                                    <li style="margin-bottom: 0.5rem;">Storage and bandwidth considerations</li>
+                                    <li style="margin-bottom: 0.5rem;">Model size and deployment complexity</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Solutions:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Edge computing and local processing</li>
+                                    <li style="margin-bottom: 0.5rem;">Progressive image loading and analysis</li>
+                                    <li style="margin-bottom: 0.5rem;">Efficient model architectures (MobileNet, EfficientNet)</li>
+                                    <li style="margin-bottom: 0.5rem;">Caching and preprocessing strategies</li>
+                                </ul>
+                            </div>
+                        
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Privacy and Security</h3>
+
+                        <p style="margin-bottom: 1.5rem;">Visual information often contains sensitive data, requiring robust privacy protection measures:</p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Data Minimization:</strong> Process only necessary visual information</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Encryption:</strong> Secure transmission and storage of visual data</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Access Controls:</strong> Granular permissions for visual data access</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Compliance:</strong> GDPR, CCPA, and industry-specific regulations</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">The Future of Visual AI</h2>
+
+                        <p style="margin-bottom: 1.5rem;">As we look ahead, several trends will shape the evolution of visual AI in conversational systems:</p>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Emerging Technologies</h3>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>3D Understanding:</strong> AI systems that can process and understand three-dimensional visual information</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Real-time Video Analysis:</strong> Processing live video streams for dynamic visual understanding</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Augmented Reality Integration:</strong> Combining visual AI with AR for immersive experiences</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Generative Visual AI:</strong> Creating custom visual content based on conversation context</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Getting Started with Visual AI Integration</h2>
+
+                        <p style="margin-bottom: 1.5rem;">For organizations looking to implement visual AI capabilities, we recommend a phased approach:</p>
+
+                        <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li ><strong>Assessment:</strong> Identify use cases where visual information would add significant value</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Pilot Implementation:</strong> Start with a focused use case to prove value and learn</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Infrastructure Development:</strong> Build the technical foundation for visual processing</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Scale and Optimize:</strong> Expand to additional use cases and optimize performance</li>
+                        </ol>
+
+                        <blockquote>
+                            "The future of conversational AI lies not just in understanding what users say, but in comprehending what they show us. Visual integration transforms AI from a text-based assistant into a truly intelligent partner."
+                        </blockquote>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            At EnterpriseChai, we're pioneering the integration of visual AI capabilities into our conversational platforms. Our approach combines cutting-edge computer vision with practical business applications, ensuring that visual AI enhances rather than complicates the user experience.
+                        </p>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            The integration of visual information into conversational AI isn't just a technological advancement – it's a fundamental shift toward more natural, intuitive, and effective human-AI interaction. As these technologies mature, organizations that embrace visual AI will gain significant competitive advantages in customer service, sales, and operational efficiency.
+                        </p>
+                    </div>
+                </div>
+                    
+                <!-- Share Section -->
+                <div style="border-top: 1px solid #e5e7eb; padding-top: 2rem; margin-top: 3rem;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: #6b7280; font-weight: 500;">Share this article:</span>
+                            <button class="btn btn-outline btn-sm">
+                                Share
+                            </button>
+                        </div>
+                        <a href="blog.html" style="color: #8b5cf6; text-decoration: none; font-weight: 500;">
+                            ← Back to all posts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai" width="160" height="32">
+                    </div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loopx.html">LoopX</a></li>
+                        <li><a href="whispr.html">Whispr</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="docs.html">Docs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#" onclick="if(window.enterpriseChaiConsent){window.enterpriseChaiConsent.openSettings();return false;}" class="body-text-16 footer-item">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js" type="text/javascript"></script>
+    
+    
+    <style>
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ensure the two-stage grid always displays side by side */
+        .two-stage-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            margin: 1.5rem 0 !important;
+            min-width: 0 !important;
+        }
+        
+        .two-stage-grid > div {
+            min-width: 0 !important;
+            word-wrap: break-word !important;
+        }
+        
+        /* Force side-by-side layout even on small screens */
+        @media (max-width: 767px) {
+            .two-stage-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            .two-stage-grid > div {
+                padding: 1rem !important;
+                font-size: 0.875rem !important;
+            }
+        }
+    </style>
+</body>
+</html>
