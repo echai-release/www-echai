@@ -1491,3 +1491,135 @@ p {
     color: black !important;
   }
 }
+
+
+/* HOW IT WORKS SECTION */
+.how-section.alt-style {
+    padding: 3.25rem 0;
+    background: linear-gradient(90deg, rgba(247, 249, 252, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.how-section.alt-style .section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.how-section.alt-style .timeline-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem; /* Consistent gap for spacing */
+    align-items: stretch;
+    margin: 2rem auto 0;
+    max-width: 1100px;
+}
+
+.how-section.alt-style .timeline-line {
+    position: absolute;
+    height: 2px;
+    background: rgba(120, 120, 128, 0.12);
+    left: 6%;
+    right: 6%;
+    top: 52%;
+    z-index: 0;
+}
+
+.how-section.alt-style .timeline-step {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment */
+    gap: 1rem;
+    align-items: center;
+    z-index: 1;
+    min-width: 0;
+    flex: 1 1 33%;
+}
+
+.how-section.alt-style .step-marker {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8b5cf6; /* Neutral color for step nodes */
+    color: #fff; /* Neutral text color */
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.how-section.alt-style .marker-num {
+    font-size: 1rem; /* Slightly smaller font size */
+    line-height: 1;
+}
+
+.how-section.alt-style .step-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem; /* Increased padding for larger cards */
+    box-shadow: 0 6px 24px rgba(15, 15, 20, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Increased gap between elements */
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    height: 100%; /* Ensure all cards are the same height */
+}
+
+.how-section.alt-style .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(15, 15, 20, 0.08);
+}
+
+.how-section.alt-style .step-card .step-card-head {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.how-section.alt-style .step-icon {
+    color: var(--primary-color, #6b46c1);
+    flex-shrink: 0;
+}
+
+.how-section.alt-style .step-title {
+    font-size: 1.25rem; /* Adjusted for better readability */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin: 0;
+    text-align: center; /* Center-align the title */
+}
+
+.how-section.alt-style .step-desc {
+    margin: 0;
+    color: #5a5f63;
+    font-size: 1rem; /* Slightly larger font size */
+    line-height: 1.6;
+    text-align: center; /* Center-align the description */
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+    .how-section.alt-style .timeline-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .how-section.alt-style .timeline-line {
+        display: none;
+    }
+
+    .how-section.alt-style .timeline-step {
+        padding-left: 0;
+    }
+
+    .how-section.alt-style .step-marker {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+    }
+
+    .how-section.alt-style .step-card {
+        padding: 1.2rem; /* Adjusted padding for mobile */
+        width: 100%;
+    }
+}
