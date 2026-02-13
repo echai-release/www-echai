@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://enterprisechai.com/</loc>
@@ -59,5 +59,37 @@
         <lastmod>2025-01-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/loopx_launch_announcement.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/new_rules_of_enterprise_sales.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/introducing-ask-me-anything.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/enhancing-conversational-ai-with-visual-information.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/conversational-ai-navigating-images-in-documents.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/advanced-prompt-engineering-strategies.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/prompt-engineering-fundamentals.html</loc>
+        <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://enterprisechai.com/evolution-of-ai-copilots-to-autonomous-agents.html</loc>
+        <lastmod>2026-02-10</lastmod>
     </url>
 </urlset>
