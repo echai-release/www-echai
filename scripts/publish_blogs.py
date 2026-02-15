@@ -22,6 +22,7 @@ import os
 import re
 import subprocess
 import sys
+import html
 from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -224,6 +225,33 @@ def normalize_body_html(html_fragment: str) -> str:
     return frag.strip()
 
 
+def html_to_text(html_fragment: str) -> str:
+    """Very small HTML -> plain text converter used for generating excerpts."""
+    if not html_fragment:
+        return ""
+    # remove tags
+    text = re.sub(r"<[^>]+>", "", html_fragment)
+    # unescape HTML entities
+    text = html.unescape(text)
+    # collapse whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def extract_first_paragraph_text(html_fragment: str) -> Optional[str]:
+    """Return the text of the first <p>...</p> or a short plain-text prefix as fallback."""
+    if not html_fragment:
+        return None
+    m = re.search(r"<p[^>]*>(.*?)</p>", html_fragment, re.I | re.S)
+    if m:
+        return html_to_text(m.group(1))
+    # fallback: use first 200 characters of the HTML->text conversion
+    plain = html_to_text(html_fragment)
+    if not plain:
+        return None
+    return plain[:200].rstrip() + ("..." if len(plain) > 200 else "")
+
+
 def build_post_html(post: Dict) -> str:
     tpl = read_text(TEMPLATES / "post.html")
 
@@ -275,6 +303,20 @@ def build_post_html(post: Dict) -> str:
                 body_html = "<p>(content not available)</p>"
     # normalize extracted body to avoid duplicated outer wrapper from previews
     body_html = normalize_body_html(body_html)
+
+    # Fill fallback description (excerpt) from first paragraph when missing
+    if not post.get("description"):
+        excerpt = extract_first_paragraph_text(body_html) or ""
+        excerpt = excerpt.strip()
+        if excerpt:
+            # limit to 200 chars
+            if len(excerpt) > 200:
+                excerpt = excerpt[:197].rstrip() + "..."
+            post["description"] = excerpt
+
+    # ensure the `description` local used in replacements reflects any fallback we just set
+    description = post.get("description") or ""
+
     # HEADER_CTA_HTML (optional)
     header_cta = ""
     if post.get("access_url") and post.get("access_label"):
@@ -433,7 +475,9 @@ def main():
 
     # Generate post pages for 'rtf' / non-full_html posts
     generated_files: List[str] = []
+    posts_meta_changed = False
     for p in published:
+        orig_desc = p.get("description") or ""
         if p.get("source_type") == "full_html":
             # skip generating if the source_path file exists in repo root
             src = ROOT / (p.get("source_path") or "")
@@ -443,10 +487,17 @@ def main():
         # create slug-based HTML page
         out_path = ROOT / safe_slug_filename(p)
         content = build_post_html(p)
+        # if build_post_html filled a missing description, mark posts.json dirty
+        if (p.get("description") or "") != orig_desc:
+            posts_meta_changed = True
         existing = out_path.exists() and out_path.read_text(encoding="utf-8") == content
         if not existing:
             out_path.write_text(content, encoding="utf-8")
             generated_files.append(str(out_path.relative_to(ROOT)))
+
+    # persist posts.json if we filled fallback descriptions
+    if posts_meta_changed:
+        save_posts(posts)
 
     # 3) Rebuild blog.html from template
     blog_html = render_blog_html(published)
