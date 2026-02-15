@@ -22,6 +22,7 @@ import os
 import re
 import subprocess
 import sys
+import argparse
 import html
 from datetime import date, datetime
 from pathlib import Path
@@ -252,6 +253,49 @@ def extract_first_paragraph_text(html_fragment: str) -> Optional[str]:
     return plain[:200].rstrip() + ("..." if len(plain) > 200 else "")
 
 
+def adjust_html_for_preview(html_content: str) -> str:
+    """Adjust paths and a few tags so the generated preview renders correctly from `previews/`.
+
+    - make relative asset paths point one level up (e.g. `css/` -> `../css/`)
+    - preserve absolute/external URLs
+    """
+    if not html_content:
+        return html_content
+
+    # css, js, public, favicon (only for relative paths)
+    html_content = re.sub(r'href=(\"|\')css/', r'href=\1../css/', html_content)
+    html_content = re.sub(r'href=(\"|\')favicon\.ico', r'href=\1../favicon.ico', html_content)
+    html_content = re.sub(r'src=(\"|\')js/', r'src=\1../js/', html_content)
+    html_content = re.sub(r'src=(\"|\')public/', r'src=\1../public/', html_content)
+    html_content = re.sub(r'href=(\"|\')public/', r'href=\1../public/', html_content)
+
+    # ensure logo/public image paths are reachable from previews/
+    html_content = re.sub(r'src=(\"|\')public/images/', r'src=\1../public/images/', html_content)
+
+    # canonical should remain absolute (no-op)
+    return html_content
+
+
+def generate_preview_for_post(post: Dict, overwrite: bool = True) -> Path:
+    """Render and write a preview HTML file for an RTF post to `previews/<slug>.html`.
+
+    Returns the Path to the generated preview.
+    """
+    slug = post.get("slug")
+    if not slug:
+        raise ValueError("post missing slug")
+    out_path = PREVIEWS / f"{slug}.html"
+    PREVIEWS.mkdir(parents=True, exist_ok=True)
+
+    # reuse the existing renderer (build_post_html) then adjust for preview context
+    content = build_post_html(post)
+    content = adjust_html_for_preview(content)
+
+    # write (overwrite allowed)
+    out_path.write_text(content, encoding="utf-8")
+    return out_path
+
+
 def build_post_html(post: Dict) -> str:
     tpl = read_text(TEMPLATES / "post.html")
 
@@ -464,8 +508,23 @@ def git_commit(files: List[str], message: str) -> bool:
         return False
 
 
-def main():
+def main(preview: bool = False):
     posts = load_posts()
+
+    # --preview: generate preview HTML for RTF posts (writes to `previews/` only)
+    if preview:
+        created = []
+        for p in posts:
+            if p.get("source_type") == "rtf":
+                try:
+                    path = generate_preview_for_post(p, overwrite=True)
+                    created.append(str(path.relative_to(ROOT)))
+                except Exception as exc:
+                    print(f"preview generation failed for {p.get('slug')}: {exc}")
+        if created:
+            print("Generated previews:", ", ".join(created))
+        else:
+            print("No RTF posts found for preview generation.")
 
     # 1) Mark due posts as published
     posts = ensure_published(posts)
@@ -537,4 +596,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Publish blog posts and optionally generate previews for RTF drafts.")
+    parser.add_argument("--preview", action="store_true", help="Generate preview HTML for RTF posts (writes to previews/). Overwrites existing previews.")
+    args = parser.parse_args()
+    main(preview=args.preview)

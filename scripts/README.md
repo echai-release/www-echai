@@ -13,8 +13,11 @@
 Run locally:
 
 ```bash
-python3 scripts/publish_blogs.py
+python3 scripts/publish_blogs.py            # run publish (no previews)
+python3 scripts/publish_blogs.py --preview  # generate preview HTML files for RTF drafts (writes to previews/)
 ```
 
-CI: the repository includes `.github/workflows/publish_blogs.yml` to run the script on a daily schedule or on demand via `workflow_dispatch`.
+Notes:
+- `--preview` writes `previews/<slug>.html` for `source_type: rtf` posts (overwrites existing previews). Previews are written to disk only and are not automatically committed.
+- The CI workflow `/.github/workflows/publish_blogs.yml` runs the script on a schedule; preview generation is local-only by default.
 
