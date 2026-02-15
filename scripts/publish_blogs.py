@@ -87,22 +87,71 @@ def ensure_published(posts: List[Dict]) -> List[Dict]:
     return posts
 
 
+def extract_article_content_from_html(html: str) -> Optional[str]:
+    """Safely extract the inner HTML for the article body from a full or partial HTML page.
+
+    Order of attempts:
+    1) element with class `article-content` (div/article/main)
+    2) <article> ... </article>
+    3) <main> ... </main>
+    4) <body> ... </body>
+
+    Returns the inner HTML (without outer wrapper) or None if nothing matched.
+    """
+    # 1) element with class `article-content` (cover div/article/main)
+    m_open = re.search(
+        r"<(div|article|main)[^>]*class=[\"']?[^\"'>]*article-content[^\"'>]*[^>]*>",
+        html,
+        re.I,
+    )
+    if m_open:
+        tag = m_open.group(1)
+        start = m_open.start()
+        # scan forward for matching closing tag of same name (handles nested same tags)
+        token_re = re.compile(rf"</?{tag}[^>]*>", re.I)
+        depth = 0
+        for match in token_re.finditer(html, start):
+            token = match.group(0)
+            if token.startswith("</"):
+                if depth == 0:
+                    inner_start = m_open.end()
+                    inner_end = match.start()
+                    return html[inner_start:inner_end].strip()
+                depth -= 1
+            else:
+                depth += 1
+        # fallback simple non-greedy capture
+        m_simple = re.search(rf"<{tag}[^>]*>(.*?)</{tag}>", html[start:], re.I | re.S)
+        if m_simple:
+            return m_simple.group(1).strip()
+
+    # 2) <article> or <main>
+    m = re.search(r"<(article|main)[^>]*>(.*?)</\1>", html, re.I | re.S)
+    if m:
+        return m.group(2).strip()
+
+    # 3) <body>
+    m = re.search(r"<body[^>]*>(.*?)</body>", html, re.I | re.S)
+    if m:
+        return m.group(1).strip()
+
+    return None
+
+
 def extract_body_from_preview(slug: str) -> Optional[str]:
     preview_path = PREVIEWS / f"{slug}.html"
     if not preview_path.exists():
         return None
     html = read_text(preview_path)
-    # Look for the article-content block used in templates/previews
-    m = re.search(
-        r"<div[^>]+class=\"article-content\"[^>]*>(.*?)<\\/div>\\s*<\\/div>", html, re.S
-    )
+    # Prefer the article fragment; avoid returning a full HTML document which causes nesting
+    extracted = extract_article_content_from_html(html)
+    if extracted:
+        return extracted
+    # fallback to <body> content if available
+    m = re.search(r"<body[^>]*>(.*?)</body>", html, re.I | re.S)
     if m:
         return m.group(1).strip()
-    # fallback: try to extract main <article> or body content
-    m = re.search(r"<main[^>]*>(.*?)<\\/main>", html, re.S)
-    if m:
-        return m.group(1).strip()
-    return html
+    return None
 
 
 def rtf_to_html_simple(rtf_text: str) -> str:
@@ -126,6 +175,55 @@ def rtf_to_html_simple(rtf_text: str) -> str:
     return html
 
 
+def normalize_body_html(html_fragment: str) -> str:
+    """Normalize extracted body HTML:
+
+    - Unwrap single top-level wrapper divs to avoid double-wrapping by template.
+    - Remove embedded share / footer-like snippets that the template already renders
+      ("Share this article", "Back to all posts", etc.).
+    - Strip obvious trailing unmatched closing tags left by extraction.
+    - Trim and return a safe HTML fragment.
+    """
+    if not html_fragment:
+        return html_fragment
+    frag = html_fragment.strip()
+
+    # unwrap single top-level <div> wrapper
+    m = re.match(r"^<div[^>]*>\s*(.*)\s*</div>$", frag, re.S)
+    if m:
+        frag = m.group(1).strip()
+
+    # remove an embedded Share Section (several preview variants)
+    # variant with explicit comment + border-top style
+    frag = re.sub(
+        r"<!--\s*Share Section\s*-->\s*<div[^>]*border-top[^>]*>.*?</div>",
+        "",
+        frag,
+        flags=re.S | re.I,
+    )
+    # variant without comment but containing the 'Share this article' label
+    frag = re.sub(
+        r"<div[^>]*border-top[^>]*>\s*.*?Share this article:.*?</div>",
+        "",
+        frag,
+        flags=re.S | re.I,
+    )
+
+    # remove stray 'Back to all posts' or 'Back to Blog' anchors that previews sometimes include
+    frag = re.sub(
+        r"<a[^>]+href=[\"']?blog\.html[\"']?[^>]*>\s*[←\-–]*\s*Back to (?:all posts|Blog)[^<]*</a>",
+        "",
+        frag,
+        flags=re.I,
+    )
+
+    # remove excessive trailing closing tags that can unbalance the template
+    frag = re.sub(r"^(?:\s*</div>)+", "", frag)
+    frag = re.sub(r"(?:</div>\s*)+$", "", frag)
+
+    return frag.strip()
+
+
 def build_post_html(post: Dict) -> str:
     tpl = read_text(TEMPLATES / "post.html")
 
@@ -135,7 +233,12 @@ def build_post_html(post: Dict) -> str:
     author = post.get("author") or "EnterpriseChai"
     slug = post["slug"]
     filename = safe_slug_filename(post)
-    canonical = f"https://enterprisechai.com/{post.get('source_path') or filename}"
+    # For full_html posts use the source_path as canonical; for RTF/drafts use the generated slug filename
+    if post.get("source_type") == "full_html" and post.get("source_path"):
+        canonical_path = post.get("source_path")
+    else:
+        canonical_path = filename
+    canonical = f"https://enterprisechai.com/{canonical_path}"
     published_at = post.get("published_at") or post.get("publish_at") or iso_today()
 
     # BODY_HTML: prefer preview if source_type == 'rtf', else if full_html try to copy the source
@@ -145,17 +248,17 @@ def build_post_html(post: Dict) -> str:
         # Try repo-root path first, then templates / previews
         root_src = ROOT / (post.get("source_path") or "")
         if root_src.exists():
-            # Extract inner article content if possible
             html = read_text(root_src)
-            m = re.search(
-                r"<div[^>]+class=\"article-content\"[^>]*>(.*?)<\\/div>\\s*<\\/div>",
-                html,
-                re.S,
-            )
-            if m:
-                body_html = m.group(1).strip()
+            extracted = extract_article_content_from_html(html)
+            if extracted:
+                body_html = extracted
             else:
-                body_html = html
+                # try <body> inner content for full HTML pages
+                m_body = re.search(r"<body[^>]*>(.*?)</body>", html, re.I | re.S)
+                if m_body:
+                    body_html = m_body.group(1).strip()
+                else:
+                    body_html = html
         else:
             # fallback to preview
             body_html = extract_body_from_preview(slug) or ""
@@ -170,7 +273,8 @@ def build_post_html(post: Dict) -> str:
                 body_html = rtf_to_html_simple(raw)
             else:
                 body_html = "<p>(content not available)</p>"
-
+    # normalize extracted body to avoid duplicated outer wrapper from previews
+    body_html = normalize_body_html(body_html)
     # HEADER_CTA_HTML (optional)
     header_cta = ""
     if post.get("access_url") and post.get("access_label"):
