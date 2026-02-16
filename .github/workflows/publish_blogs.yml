@@ -26,6 +26,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # configure committer identity so any `git commit` inside the script succeeds
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python3 scripts/publish_blogs.py
 
       - name: Push changes (if any)
