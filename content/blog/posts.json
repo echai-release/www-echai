@@ -100,12 +100,12 @@
   {
     "slug": "bulk-enrichment-that-actually-scales",
     "title": "Bulk Enrichment That Actually Scales",
-    "description": "",
+    "description": "Most enrichment pipelines don’t fail because the API is bad.",
     "author": "EnterpriseChai",
     "publish_at": "2026-02-16",
     "approved": true,
-    "published": false,
-    "published_at": "",
+    "published": true,
+    "published_at": "2026-02-16",
     "source_type": "rtf",
     "source_path": "drafts/blog/Bulk Enrichment That Actually Scales.rtf"
   },
@@ -267,4 +267,3 @@
     "source_path": "drafts/blog/Why User-Provided Facts Break Most AI Research Systems.rtf"
   }
 ]
-
