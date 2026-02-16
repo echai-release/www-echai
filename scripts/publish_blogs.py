@@ -263,14 +263,18 @@ def adjust_html_for_preview(html_content: str) -> str:
         return html_content
 
     # css, js, public, favicon (only for relative paths)
-    html_content = re.sub(r'href=(\"|\')css/', r'href=\1../css/', html_content)
-    html_content = re.sub(r'href=(\"|\')favicon\.ico', r'href=\1../favicon.ico', html_content)
-    html_content = re.sub(r'src=(\"|\')js/', r'src=\1../js/', html_content)
-    html_content = re.sub(r'src=(\"|\')public/', r'src=\1../public/', html_content)
-    html_content = re.sub(r'href=(\"|\')public/', r'href=\1../public/', html_content)
+    html_content = re.sub(r"href=(\"|\')css/", r"href=\1../css/", html_content)
+    html_content = re.sub(
+        r"href=(\"|\')favicon\.ico", r"href=\1../favicon.ico", html_content
+    )
+    html_content = re.sub(r"src=(\"|\')js/", r"src=\1../js/", html_content)
+    html_content = re.sub(r"src=(\"|\')public/", r"src=\1../public/", html_content)
+    html_content = re.sub(r"href=(\"|\')public/", r"href=\1../public/", html_content)
 
     # ensure logo/public image paths are reachable from previews/
-    html_content = re.sub(r'src=(\"|\')public/images/', r'src=\1../public/images/', html_content)
+    html_content = re.sub(
+        r"src=(\"|\')public/images/", r"src=\1../public/images/", html_content
+    )
 
     # canonical should remain absolute (no-op)
     return html_content
@@ -508,7 +512,18 @@ def git_commit(files: List[str], message: str) -> bool:
         return False
 
 
-def main(preview: bool = False):
+def is_commit_allowed(no_commit_flag: bool = False) -> bool:
+    """Return True when script is allowed to perform git commits.
+
+    Commits are disallowed inside GitHub Actions by default. The caller can
+    override that with the `--no-commit` flag. This helper centralizes the
+    logic and is easy to unit test.
+    """
+    in_ci = os.getenv("GITHUB_ACTIONS", "false").lower() == "true"
+    return (not in_ci) and (not no_commit_flag)
+
+
+def main(preview: bool = False, no_commit: bool = False):
     posts = load_posts()
 
     # --preview: generate preview HTML for RTF posts (writes to `previews/` only)
@@ -586,17 +601,34 @@ def main(preview: bool = False):
 
     if files_to_commit:
         msg = f"chore(publish): auto-publish {len(published)} post(s) [{iso_today()}]"
-        committed = git_commit(files_to_commit, msg)
-        if not committed:
-            print("No commit was made (maybe no changes or git not configured).")
+        if is_commit_allowed(no_commit):
+            committed = git_commit(files_to_commit, msg)
+            if not committed:
+                print("No commit was made (maybe no changes or git not configured).")
+            else:
+                print(f"Committed: {files_to_commit}")
         else:
-            print(f"Committed: {files_to_commit}")
+            print(
+                "Commit skipped (running in CI or --no-commit). The workflow should stage/commit/push these files."
+            )
+            print("Files that would be committed:", files_to_commit)
     else:
         print("Nothing to publish or update.")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Publish blog posts and optionally generate previews for RTF drafts.")
-    parser.add_argument("--preview", action="store_true", help="Generate preview HTML for RTF posts (writes to previews/). Overwrites existing previews.")
+    parser = argparse.ArgumentParser(
+        description="Publish blog posts and optionally generate previews for RTF drafts."
+    )
+    parser.add_argument(
+        "--preview",
+        action="store_true",
+        help="Generate preview HTML for RTF posts (writes to previews/). Overwrites existing previews.",
+    )
+    parser.add_argument(
+        "--no-commit",
+        action="store_true",
+        help="Do not create git commits (CI/workflow will handle commits).",
+    )
     args = parser.parse_args()
-    main(preview=args.preview)
+    main(preview=args.preview, no_commit=args.no_commit)

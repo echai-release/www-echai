@@ -13,11 +13,13 @@
 Run locally:
 
 ```bash
-python3 scripts/publish_blogs.py            # run publish (no previews)
-python3 scripts/publish_blogs.py --preview  # generate preview HTML files for RTF drafts (writes to previews/)
+python3 scripts/publish_blogs.py                       # run publish (commits allowed locally)
+python3 scripts/publish_blogs.py --no-commit           # run publish but do not create git commits
+python3 scripts/publish_blogs.py --preview             # generate preview HTML files for RTF drafts (writes to previews/)
 ```
 
 Notes:
 - `--preview` writes `previews/<slug>.html` for `source_type: rtf` posts (overwrites existing previews). Previews are written to disk only and are not automatically committed.
-- The CI workflow `/.github/workflows/publish_blogs.yml` runs the script on a schedule; preview generation is local-only by default.
+- When running inside GitHub Actions the script will *not* create git commits (the workflow performs commit/push). Use `--no-commit` to force the same behavior locally.
+- The CI workflow `/.github/workflows/publish_blogs.yml` runs the script on a schedule and is responsible for staging/committing/pushing generated files.
 
