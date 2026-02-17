@@ -143,10 +143,6 @@
                     Bulk Enrichment That Actually Scales
                 </h1>
 
-                <p style="font-size: 1.25rem; color: #6b7280; font-weight: 300; line-height: 1.6; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
-                    Most enrichment pipelines don’t fail because the API is bad.
-                </p>
-
                 
 
                 <div style="display: flex; align-items: center; justify-content: center; color: #6b7280;">
@@ -170,7 +166,7 @@
 <p style="margin-bottom: 1.5rem;">* 10 executives → 10 calls * latency stacks * rate limits hit * retries waste credits</p>
 <p style="margin-bottom: 1.5rem;">So we switched to researching in bulk with our third party integration <code>/people/bulk_match</code>.</p>
 <p style="margin-bottom: 1.5rem;">One call enriches up to 10 people. Same workflow—~10x throughput.</p>
-<h2 style="margin-top: 2rem; margin-bottom: 1rem;">The shift: executives are a batch, not a queue</h2>
+<h3 style="margin-top: 2rem; margin-bottom: 1rem;">The shift: executives are a batch, not a queue</h3>
 <p style="margin-bottom: 1.5rem;">Instead of enriching each person separately, we send a single payload of up to 10 execs and get back:</p>
 <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
 <li style="margin-bottom: 0.5rem;"><code>matches</code> (enriched people)</li>
@@ -178,7 +174,7 @@
 <li style="margin-bottom: 0.5rem;"><code>credits_consumed</code> (cost visibility)</li>
 </ul>
 <p style="margin-bottom: 1.5rem;">This matters because signals detection is probabilistic. You don’t need perfection—you need <strong>coverage</strong>, <strong>speed</strong>, and <strong>repeatability</strong>.</p>
-<h2 style="margin-top: 2rem; margin-bottom: 1rem;">Production discipline that makes bulk work</h2>
+<h3 style="margin-top: 2rem; margin-bottom: 1rem;">Production discipline that makes bulk work</h3>
 <p style="margin-bottom: 1.5rem;">Bulk endpoints don’t remove complexity—they concentrate it. So we enforced a few rules:</p>
 <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
 <li style="margin-bottom: 0.5rem;"><strong>Bounded input:</strong> hard limit of 10 people per request</li>
