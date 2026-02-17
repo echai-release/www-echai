@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /previews/
 
 # Sitemap
 Sitemap: https://enterprisechai.com/sitemap.xml
@@ -11,15 +12,19 @@ Disallow: /private/
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Disallow: /previews/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /previews/
 
 User-agent: Slurp
 Allow: /
+Disallow: /previews/
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /previews/
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1
