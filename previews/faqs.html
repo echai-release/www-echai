@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LoopX FAQs | Revenue Intelligence, Architecture, and Comparisons</title>
+    <meta name="title" content="LoopX FAQs | Revenue Intelligence, Architecture, and Comparisons">
+    <meta name="description" content="LoopX is a revenue intelligence platform that evaluates deal reality using internal and external signals. Learn how LoopX differs from Clay, Apollo, and 6sense and why it is not just an LLM wrapper.">
+    <meta name="keywords" content="LoopX FAQ, revenue intelligence, LoopX vs Clay, LoopX vs Apollo, LoopX vs 6sense, LLM wrapper, MEDPICC, forecast integrity">
+    <meta name="author" content="EnterpriseChai">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enterprisechai.com/faqs.html">
+    <meta property="og:title" content="LoopX FAQs | Revenue Intelligence, Architecture, and Comparisons">
+    <meta property="og:description" content="Answers to common LoopX questions covering architecture, comparisons, integrations, and roadmap.">
+    <meta property="og:image" content="https://enterprisechai.com/public/images/og-image.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enterprisechai.com/faqs.html">
+    <meta property="twitter:title" content="LoopX FAQs | Revenue Intelligence, Architecture, and Comparisons">
+    <meta property="twitter:description" content="Answers to common LoopX questions covering architecture, comparisons, integrations, and roadmap.">
+    <meta property="twitter:image" content="https://enterprisechai.com/public/images/og-image.png">
+
+    <link rel="canonical" href="https://enterprisechai.com/faqs.html">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="../css/cookie-consent.css" rel="stylesheet" type="text/css">
+    <link href="../css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is LoopX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopX is a revenue intelligence system that evaluates deal reality using internal and external signals. It validates whether a deal reflects real buying conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LoopX just an LLM wrapper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. LoopX is an agentic system that ingests structured and unstructured signals, tracks contradictions, versions facts, manages session state, enforces execution guardrails, and surfaces decision gaps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LoopX predictive AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopX is currently evidence-based. It evaluates what signals exist, what is missing, what changed externally, and what conflicts internally. It is building toward predictive intelligence as signal history compounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is LoopX different from Clay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clay focuses on enrichment and outbound workflows. LoopX evaluates deal reality, buying conditions, and forecast integrity for active opportunities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is LoopX different from Apollo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apollo is a prospecting database and outreach platform designed to increase activity. LoopX is designed to increase decision accuracy for pipeline and forecast reviews."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is LoopX different from 6sense?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "6sense predicts account intent. LoopX validates whether a deal is real, unproven, or hope-based and explains why."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is LoopX built for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopX is built for sales managers, directors, VPs of sales, and CROs who own forecast quality and commit decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does LoopX replace CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. CRM records activity. LoopX evaluates meaning and decision quality from internal and external signals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you aligned with MEDPICC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. LoopX is strongly inspired by MEDPICC and operationalizes it by identifying missing buyers, unclear decision criteria, weak urgency, and competitive risk in live deals."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .faq-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+        .faq-card h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.35rem;
+        }
+        .faq-item {
+            border-top: 1px solid #f1f5f9;
+            padding: 0.85rem 0;
+        }
+        .faq-item:first-of-type { border-top: 0; }
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #111827;
+        }
+        .faq-item p { margin: 0.7rem 0 0 0; color: #374151; }
+        .faq-item ul {
+            margin: 0.7rem 0 0 1.25rem;
+            color: #374151;
+        }
+        .faq-item li { margin-bottom: 0.4rem; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../" aria-label="EnterpriseChai Home">
+                        <span style="font-weight: 700; font-size: 1.1rem; color: #111827;">LoopX FAQs</span>
+                    </a>
+                </div>
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="../loopx.html" class="dropdown-item"><span>LoopX</span><span class="status">Pilot</span></a>
+                            <a href="../whispr.html" class="dropdown-item"><span>Whispr</span><span class="status">Beta</span></a>
+                            <a href="../concierge.html" class="dropdown-item"><span>Concierge</span><span class="status">Live</span></a>
+                        </div>
+                    </div>
+                    <a href="../about.html" class="nav-link">About</a>
+                    <a href="../blog.html" class="nav-link">Blog</a>
+                    <a href="../docs.html" class="nav-link">Docs</a>
+                    <a href="../faqs.html" class="nav-link" style="color: #8b5cf6;">FAQs</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="background: #fff; padding-top: 6rem; padding-bottom: 3rem;">
+            <div class="container">
+                <h1 class="section-title" style="text-align: center; margin-bottom: 1.5rem; color: #8b5cf6;">Our Manifesto - Why We Exist</h1>
+                <div style="max-width: 960px; margin: 0 auto; font-size: 1.125rem; text-align: center;">
+                    <p style="margin-bottom: 1rem;">Leading a sales team is harder than it looks.</p>
+                    <p style="margin-bottom: 1rem;">You sit in forecast calls listening carefully.</p>
+                    <p style="margin-bottom: 1rem;">You want to believe your reps.</p>
+                    <p style="margin-bottom: 1rem;">You want the number to be real.</p>
+                    <p style="margin-bottom: 1rem;">But sometimes something feels off.</p>
+                    <p style="margin-bottom: 1rem;">The deal sounds good. The activity is there. The stage looks right.</p>
+                    <p style="margin-bottom: 1rem;">And still, you are not fully confident.</p>
+                    <p style="margin-bottom: 1rem;">We built LoopX for that moment.</p>
+                    <p style="margin-bottom: 1rem;">Not to replace your judgment.</p>
+                    <p style="margin-bottom: 1rem;">Not to question your team.</p>
+                    <p style="margin-bottom: 1rem;">But to give you a second perspective when you need it.</p>
+                    <p style="margin-bottom: 1rem;">Buying decisions do not only live in your CRM. They live in the real world. Priorities shift. Budgets change.</p>
+                    <p style="margin-bottom: 1rem;">Leadership moves. Markets evolve.</p>
+                    <p style="margin-bottom: 1rem;">We exist to help you see that clearly, so your decisions feel grounded, not hopeful.</p>
+                    <p style="margin-bottom: 1rem;">Because leading with clarity builds trust.</p>
+                    <p style="margin-bottom: 1rem;">And trust is what makes teams stronger over time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f9fafb; padding-top: 2rem;">
+            <div class="container" style="max-width: 980px;">
+                <p style="margin-bottom: 1.5rem; margin-top: 0.5rem; font-size: 2rem; font-weight: 700; text-align: center;">LoopX - Frequently Asked Questions</p>
+                <div class="faq-card">
+                    <h2>🚀 About LoopX</h2>
+                    <details class="faq-item" open>
+                        <summary>What is LoopX?</summary>
+                        <p>LoopX is a revenue intelligence system that evaluates deal reality using internal and external signals.</p>
+                        <ul>
+                            <li>Call transcripts</li>
+                            <li>Meeting notes</li>
+                            <li>CRM context</li>
+                            <li>User corrections</li>
+                            <li>External company signals: hiring, leadership shifts, strategic pivots, and funding changes</li>
+                        </ul>
+                        <p>LoopX does not generate surface-level summaries. It validates whether a deal reflects real buying conditions or hope.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Who is LoopX built for?</summary>
+                        <p>LoopX is built primarily for sales managers, directors of sales, VPs of sales, and CROs.</p>
+                        <p>If your forecast conversations include questions like “What changed?”, “Who is the buyer?”, “Why now?”, and “Is this real?”, LoopX is built for you.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does LoopX replace CRM?</summary>
+                        <p>No. CRM records activity. LoopX evaluates meaning.</p>
+                        <p>CRM answers “What happened?” LoopX answers “What does this actually indicate?”</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Why does LoopX focus on external signals?</summary>
+                        <p>Buying decisions do not happen inside your CRM. They happen inside the customer organization where priorities, budgets, and leadership can shift.</p>
+                        <p>LoopX evaluates whether the outside world supports the internal narrative so forecast confidence is based on reality.</p>
+                    </details>
+                </div>
+
+                <div class="faq-card">
+                    <h2>🧠 Technology & Architecture</h2>
+                    <details class="faq-item">
+                        <summary>Is LoopX just an LLM wrapper?</summary>
+                        <p>No.</p>
+                        <p>An LLM wrapper generates text. LoopX is an agentic decision system that ingests structured and unstructured signals, tracks contradictions, versions facts, manages session state, enforces execution guardrails, and surfaces decision gaps.</p>
+                        <p>The language model is one component. The architecture is the product.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is LoopX predictive AI?</summary>
+                        <p>Not yet. Today LoopX is evidence-based, not prediction-based.</p>
+                        <ul>
+                            <li>What signals exist</li>
+                            <li>What signals are missing</li>
+                            <li>What changed externally</li>
+                            <li>What conflicts internally</li>
+                        </ul>
+                        <p>As signal history compounds, LoopX is building the foundation for predictive intelligence.</p>
+                    </details>
+                </div>
+
+                <div class="faq-card">
+                    <h2>🔎 Product Comparisons</h2>
+                    <details class="faq-item">
+                        <summary>How is LoopX different from Clay?</summary>
+                        <p>Clay is a data enrichment and outbound workflow platform. LoopX answers a different question: “Is this account behaving like a buyer right now?”</p>
+                        <p>Clay operates top-of-funnel. LoopX operates at pipeline qualification, commit validation, forecast integrity, and deal revival sanity checks.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How is LoopX different from Apollo?</summary>
+                        <p>Apollo is a prospecting database and outreach platform. Apollo increases activity. LoopX increases accuracy.</p>
+                        <ul>
+                            <li>Decision ownership</li>
+                            <li>Buying conditions</li>
+                            <li>Signal validation</li>
+                            <li>Forecast credibility</li>
+                        </ul>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How is LoopX different from 6sense?</summary>
+                        <p>6sense predicts account intent (“This account might be in market”). LoopX validates commitment (“Is this deal real, unproven, or based on hope and why?”).</p>
+                        <p>LoopX validates commitment, not just intent.</p>
+                    </details>
+                </div>
+
+                <div class="faq-card">
+                    <h2>🏢 Company & Ecosystem</h2>
+                    <details class="faq-item">
+                        <summary>Is LoopX the same as EnterpriseChai?</summary>
+                        <p>No. EnterpriseChai is the parent company. LoopX is the flagship product and core long-term roadmap focus.</p>
+                        <p>The broader ecosystem includes Whispr (silent listener for structured call signal), AI Concierge (workflow assistant), and AI Companion (maintenance mode).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is LoopX replacing salespeople?</summary>
+                        <p>No. LoopX replaces ambiguity.</p>
+                        <ul>
+                            <li>Less guesswork</li>
+                            <li>Less emotional debate</li>
+                            <li>Less forecast friction</li>
+                        </ul>
+                        <p>Sales remains human. LoopX helps teams operate with better signal.</p>
+                    </details>
+                </div>
+
+                <div class="faq-card">
+                    <h2>🔮 Roadmap & Integrations</h2>
+                    <details class="faq-item">
+                        <summary>What is on the LoopX roadmap?</summary>
+                        <p>Roadmap focus is signal depth and decision intelligence, not feature sprawl.</p>
+                        <ul>
+                            <li>Expanded structured signal capture across internal and external sources</li>
+                            <li>Stronger MEDPICC-aligned evaluation models</li>
+                            <li>Pattern recognition across deal histories</li>
+                            <li>Export workflows into CRM systems</li>
+                            <li>Predictive intelligence based on compounded signal history</li>
+                        </ul>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you integrate with CRM systems?</summary>
+                        <p>LoopX currently prioritizes export and attachment workflows over deep native CRM integrations. This is intentional based on customer demand.</p>
+                        <p>CRM remains the system of record. LoopX is the system of interpretation.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you integrate with third-party tools?</summary>
+                        <p>Yes. LoopX integrates with third-party enrichment and intelligence tools aligned with MEDPICC principles.</p>
+                        <ul>
+                            <li>Metrics validation</li>
+                            <li>Economic buyer identification</li>
+                            <li>Decision criteria mapping</li>
+                            <li>Competitive positioning signals</li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="faq-card">
+                    <h2>📘 Framework & Philosophy</h2>
+                    <details class="faq-item">
+                        <summary>Are you aligned with MEDPICC and inspired by John McMahon?</summary>
+                        <p>Yes. LoopX is strongly inspired by John McMahon’s approach and the MEDPICC framework.</p>
+                        <p>LoopX operationalizes MEDPICC by identifying missing economic buyers, highlighting unclear decision criteria, validating metrics and urgency, surfacing champion gaps, and evaluating competitive positioning.</p>
+                        <p>Our philosophy is simple: salespeople should get trained while doing their job. LoopX reinforces structured thinking inside live deals.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo"></div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../careers.html">Careers</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="../loopx.html">LoopX</a></li>
+                        <li><a href="../whispr.html">Whispr</a></li>
+                        <li><a href="../concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="../help.html">Help</a></li>
+                        <li><a href="../docs.html">Docs</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cookie-consent.js" type="text/javascript"></script>
+</body>
+</html>
