@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational AI: Navigating Images in Documents | EnterpriseChai Blog</title>
+    <meta name="description" content="Learn how modern AI systems can understand and process images within documents, enabling more comprehensive document analysis and intelligent content extraction.">
+    <meta name="keywords" content="conversational AI, document analysis, image processing, AI technology, document intelligence">
+    <meta name="author" content="Ziba Atak">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enterprisechai.com/conversational-ai-navigating-images-in-documents">
+    <meta property="og:title" content="Conversational AI: Navigating Images in Documents">
+    <meta property="og:description" content="Learn how modern AI systems can understand and process images within documents, enabling more comprehensive document analysis and intelligent content extraction.">
+    <meta property="og:image" content="https://enterprisechai.com/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enterprisechai.com/conversational-ai-navigating-images-in-documents">
+    <meta property="twitter:title" content="Conversational AI: Navigating Images in Documents">
+    <meta property="twitter:description" content="Learn how modern AI systems can understand and process images within documents, enabling more comprehensive document analysis and intelligent content extraction.">
+    <meta property="twitter:image" content="https://enterprisechai.com/images/og-image.png">
+
+    <link rel="canonical" href="https://enterprisechai.com/conversational-ai-navigating-images-in-documents">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/cookie-consent.css" rel="stylesheet" type="text/css">
+    <link href="css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
+    <!-- Widget Script -->
+    <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const testConfig = { 
+            EChaiServer: 'https://backend.enterprisechai.com/chatbot',
+            accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3NzI3Mzc2NzF9.4ufQQ1DdWom5zJU9ol42iOdTEazIGzqCjg4v-31aXZA',
+            theme: 'light',
+            aiMessageIconHoverText: 'Ask EChai',
+            aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
+        }; 
+        window.mountEChaiWidget(testConfig);
+        });
+    </script>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" aria-label="EnterpriseChai Home">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai - AI GTM Platform" width="200" height="40">
+                    </a>
+                </div>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="loopx.html" class="dropdown-item">
+                                <span>LoopX</span>
+                                <span class="status">Pilot</span>
+                            </a>
+                            <a href="whispr.html" class="dropdown-item">
+                                <span>Whispr</span>
+                                <span class="status">Beta</span>
+                            </a>
+                            <a href="concierge.html" class="dropdown-item">
+                                <span>Concierge</span>
+                                <span class="status">Live</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <div class="nav-actions">
+                        <a href="https://loopx.enterprisechai.net" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+                <div class="mobile-nav-content">
+                    <div class="mobile-nav-section">
+                        <p class="mobile-nav-title">Products</p>
+                        <a href="loopx.html" class="mobile-nav-link">LoopX <span class="status">(Pilot)</span></a>
+                        <a href="whispr.html" class="mobile-nav-link">Whispr <span class="status">(Beta)</span></a>
+                        <a href="concierge.html" class="mobile-nav-link">Concierge <span class="status">(Live)</span></a>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="faqs.html" class="mobile-nav-link">FAQs</a>
+                    <div class="mobile-nav-actions">
+                        <a href="https://loopx.enterprisechai.net" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section style="background-color: white; padding: 4rem 0;">
+        <div class="container">
+            <a href="blog.html" style="display: inline-flex; align-items: center; color: #8b5cf6; text-decoration: none; margin-bottom: 2rem; font-weight: 500;">
+                ← Back to Blog
+            </a>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: black; margin-bottom: 1.5rem; line-height: 1.1;">
+                    Conversational AI: Navigating Images in Documents
+                </h1>
+                <p style="font-size: 1.25rem; color: #6b7280; font-weight: 300; line-height: 1.6; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">
+                    Learn how modern AI systems can understand and process images within documents, enabling more comprehensive document analysis and intelligent content extraction.
+                </p>
+                <div style="display: flex; align-items: center; justify-content: center; color: #6b7280;">
+                    <span style="font-weight: 500;">Ziba Atak</span>
+                    <span style="margin: 0 0.75rem;">•</span>
+                    <span class="date">December 5, 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Article Content -->
+        <section class="section">
+            <div class="container">
+                <div class="feature-card">
+                    <!-- Replaced Tailwind classes with custom CSS classes for proper styling -->
+                    <div class="article-content">
+                        <p cstyle="font-size: 1.125rem; margin-bottom: 1.5rem;">
+                            In today's digital workplace, documents are rarely just text. They contain charts, diagrams, images, screenshots, and complex visual layouts that convey critical information. For conversational AI to truly understand and assist with document-based tasks, it must be able to navigate and interpret these visual elements as seamlessly as humans do.
+                        </p>
+
+                        <h2style="margin-top: 2rem; margin-bottom: 1rem;">The Challenge of Mixed-Media Documents</h2>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Traditional document processing systems focused primarily on text extraction, treating images as obstacles to overcome rather than valuable information sources. This approach created significant gaps in understanding, particularly for:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Technical documentation with diagrams and screenshots</li>
+                            <li>Financial reports with charts and graphs</li>
+                            <li>Marketing materials with infographics</li>
+                            <li>Legal documents with embedded evidence</li>
+                            <li>Research papers with data visualizations</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Modern Approaches to Document Intelligence</h2>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">1. Unified Document Understanding</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Advanced AI systems now treat documents as unified information spaces where text and images work together to convey meaning. This holistic approach involves:
+                        </p>
+
+                        <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin: 1.5rem 0;">
+                            <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Key Technologies:</h4>
+                            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                <li>Layout analysis and structure recognition</li>
+                                <li>Multi-modal embedding for text-image relationships</li>
+                                <li>Contextual image interpretation based on surrounding text</li>
+                                <li>Cross-reference resolution between textual and visual elements</li>
+                            </ul>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">2. Intelligent Image Classification</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Not all images in documents serve the same purpose. Modern AI systems can automatically classify and handle different types of visual content:
+                        </p>
+
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Informational Images</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li>Charts and graphs</li>
+                                    <li>Diagrams and flowcharts</li>
+                                    <li>Screenshots and UI elements</li>
+                                    <li>Technical illustrations</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.5rem;">Decorative Images</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li>Brand logos and headers</li>
+                                    <li>Background patterns</li>
+                                    <li>Decorative borders</li>
+                                    <li>Stock photography</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">3. Contextual Image Analysis</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            The meaning of an image often depends heavily on its context within the document. Advanced systems analyze:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Positional Context:</strong> Where the image appears in relation to text sections</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Referential Context:</strong> How text references or describes the image</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Semantic Context:</strong> The broader topic and purpose of the document section</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Sequential Context:</strong> How the image relates to other visual elements</li>
+                        </ul>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Practical Applications</h2>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Customer Support Documentation</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            In customer support scenarios, AI systems can now provide comprehensive assistance with complex technical documents:
+                        </p>
+
+                        <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin: 1.5rem 0;">
+                            <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Example Scenario:</h4>
+                            <p style="margin-bottom: 1.5rem;">
+                                "A customer asks about a specific error message. The AI not only finds the relevant troubleshooting section but also analyzes the accompanying screenshot to confirm it matches the customer's issue, then provides step-by-step guidance that references both the textual instructions and visual indicators in the interface."
+                            </p>
+                        </div>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Financial Document Analysis</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Financial documents heavily rely on charts, graphs, and tables to convey critical information. AI systems can now:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Extract data points from charts and convert them to structured formats</li>
+                            <li>Identify trends and patterns in visual data representations</li>
+                            <li>Cross-reference visual data with textual analysis and commentary</li>
+                            <li>Generate natural language summaries of complex financial visualizations</li>
+                        </ul>
+
+                        <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Research and Academic Papers</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Academic documents present unique challenges with their complex figures, equations, and specialized diagrams. Modern AI can:
+                        </p>
+
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Technical Capabilities:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li>Mathematical equation recognition and interpretation</li>
+                                    <li>Scientific diagram analysis and explanation</li>
+                                    <li>Data visualization extraction and summarization</li>
+                                    <li>Citation and reference linking across visual elements</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">User Benefits:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li>Faster literature review and analysis</li>
+                                    <li>Automated figure and table summarization</li>
+                                    <li>Cross-paper comparison of visual data</li>
+                                    <li>Accessibility improvements for visual content</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Technical Implementation Strategies</h2>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Multi-Stage Processing Pipeline</h3>
+
+                        <p style="margin-bottom: 1.5rem;">Effective document image processing typically involves a multi-stage approach:</p>
+
+                        <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Document Layout Analysis:</strong> Identify text blocks, image regions, and structural elements</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Image Extraction and Classification:</strong> Isolate images and determine their type and purpose</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Content Analysis:</strong> Extract information from images using specialized models</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Context Integration:</strong> Combine visual insights with textual information</li>
+                            <li><strong>Knowledge Synthesis:</strong> Generate comprehensive understanding of the document</li>
+                        </ol>
+
+                        <h3>Specialized Models for Different Content Types</h3>
+
+                        <p style="margin-bottom: 1.5rem;">Different types of visual content require specialized processing approaches:</p>
+
+                        <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin: 1.5rem 0;">
+                            <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Model Specializations:</h4>
+                            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                <li style="margin-bottom: 0.5rem;"><strong>Chart Recognition Models:</strong> Specialized in extracting data from various chart types</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Table Processing Models:</strong> Optimized for structured data extraction from tables</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Diagram Understanding Models:</strong> Trained on technical diagrams and flowcharts</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>OCR Enhancement Models:</strong> Improved text recognition in complex visual contexts</li>
+                            </ul>
+                        </div>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Overcoming Common Challenges</h2>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Quality and Resolution Issues</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Real-world documents often contain low-quality images, scanned content, or compressed visuals. Modern systems address these challenges through:
+                        </p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Image Enhancement:</strong> AI-powered upscaling and noise reduction</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Adaptive Processing:</strong> Adjusting analysis techniques based on image quality</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Confidence Scoring:</strong> Providing reliability indicators for extracted information</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Fallback Strategies:</strong> Alternative approaches when primary analysis fails</li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Complex Layout Handling</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Documents with complex layouts, multiple columns, and intricate visual arrangements require sophisticated processing strategies:
+                        </p>
+
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">Common Challenges:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Multi-column layouts</li>
+                                    <li style="margin-bottom: 0.5rem;">Overlapping text and images</li>
+                                    <li style="margin-bottom: 0.5rem;">Non-standard reading orders</li>
+                                    <li style="margin-bottom: 0.5rem;">Mixed language content</li>
+                                </ul>
+                            </div>
+                            <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; flex: 1;">
+                                <h4 style="font-weight: 500; color: #111827; margin-bottom: 0.75rem;">AI Solutions:</h4>
+                                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Advanced layout detection algorithms</li>
+                                    <li style="margin-bottom: 0.5rem;">Reading order prediction models</li>
+                                    <li style="margin-bottom: 0.5rem;">Contextual relationship mapping</li>
+                                    <li style="margin-bottom: 0.5rem;">Multi-language processing pipelines</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Future Directions</h2>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Interactive Document Exploration</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            The next generation of document AI will enable interactive exploration where users can ask questions about specific visual elements and receive detailed explanations:
+                        </p>
+
+                        <blockquote style="margin-bottom: 1.5rem;">
+                            "Imagine pointing to a chart in a financial report and asking, 'What caused this spike in Q3?' and receiving an AI-generated explanation that combines the visual data with contextual information from the surrounding text."
+                        </blockquote>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Real-Time Document Collaboration</h3>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            Future systems will support real-time collaborative document analysis, where multiple users and AI systems can simultaneously analyze and discuss visual content within documents.
+                        </p>
+
+                        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">Best Practices for Implementation</h2>
+
+                        <p style="margin-bottom: 1.5rem;">Organizations looking to implement document image processing should consider:</p>
+
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Start with High-Value Use Cases:</strong> Focus on documents where visual content is critical</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Ensure Data Quality:</strong> Invest in high-quality document digitization processes</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Plan for Scalability:</strong> Design systems that can handle increasing document volumes</li>
+                            <li><strong>Maintain Human Oversight:</strong> Implement review processes for critical applications</li>
+                        </ul>
+
+                        <p style="margin-bottom: 1.5rem;">
+                            The ability to navigate and understand images within documents represents a significant leap forward in AI capabilities. As these technologies continue to mature, they will unlock new possibilities for document analysis, knowledge extraction, and intelligent assistance across virtually every industry and use case.
+                        </p>
+
+                    <p style="margin-bottom: 1.5rem;">
+                        At EnterpriseChai, we've built these advanced prompting strategies into our platform, ensuring that
+                        every interaction with our AI copilots leverages the latest in prompt engineering research. The result
+                        is more accurate, contextual, and actionable insights for your revenue teams.
+                    </p>
+                </div>
+
+                <!-- Share Section -->
+                <div style="border-top: 1px solid #e5e7eb; padding-top: 2rem; margin-top: 3rem;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="color: #6b7280; font-weight: 500;">Share this article:</span>
+                            <button class="btn btn-outline btn-sm">
+                                Share
+                            </button>
+                        </div>
+                        <a href="blog.html" style="color: #8b5cf6; text-decoration: none; font-weight: 500;">
+                            ← Back to all posts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai" width="160" height="32">
+                    </div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loopx.html">LoopX</a></li>
+                        <li><a href="whispr.html">Whispr</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#" onclick="if(window.enterpriseChaiConsent){window.enterpriseChaiConsent.openSettings();return false;}" class="body-text-16 footer-item">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js" type="text/javascript"></script>
+    
+    
+    <style>
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>
