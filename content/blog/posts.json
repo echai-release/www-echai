@@ -2,14 +2,12 @@
   {
     "slug": "loopx_launch_announcement",
     "title": "Launch Announcement - Resurrect Your Dead Deals with LoopX",
-    "description": "Resurrect your closed-lost deals with LoopX’s CSV-based MVP: quick, no integrations, and designed to identify warm re-engagement opportunities.",
+    "description": "Resurrect your closed-lost deals with LoopX's CSV-based MVP: quick, no integrations, and designed to identify warm re-engagement opportunities.",
     "author": "EnterpriseChai",
     "publish_at": "2025-12-11",
     "approved": true,
     "published": true,
     "published_at": "2025-12-11",
-    "source_type": "full_html",
-    "source_path": "loopx_launch_announcement.html",
     "access_url": "https://loopx.enterprisechai.net",
     "access_label": "Access it here"
   },
@@ -21,9 +19,7 @@
     "publish_at": "2025-11-21",
     "approved": true,
     "published": true,
-    "published_at": "2025-11-21",
-    "source_type": "full_html",
-    "source_path": "new_rules_of_enterprise_sales.html"
+    "published_at": "2025-11-21"
   },
   {
     "slug": "introducing-ask-me-anything",
@@ -33,9 +29,7 @@
     "publish_at": "2025-02-15",
     "approved": true,
     "published": true,
-    "published_at": "2025-02-15",
-    "source_type": "full_html",
-    "source_path": "introducing-ask-me-anything.html"
+    "published_at": "2025-02-15"
   },
   {
     "slug": "enhancing-conversational-ai-with-visual-information",
@@ -45,9 +39,7 @@
     "publish_at": "2024-12-18",
     "approved": true,
     "published": true,
-    "published_at": "2024-12-18",
-    "source_type": "full_html",
-    "source_path": "enhancing-conversational-ai-with-visual-information.html"
+    "published_at": "2024-12-18"
   },
   {
     "slug": "conversational-ai-navigating-images-in-documents",
@@ -57,9 +49,7 @@
     "publish_at": "2024-12-05",
     "approved": true,
     "published": true,
-    "published_at": "2024-12-05",
-    "source_type": "full_html",
-    "source_path": "conversational-ai-navigating-images-in-documents.html"
+    "published_at": "2024-12-05"
   },
   {
     "slug": "advanced-prompt-engineering-strategies",
@@ -69,9 +59,7 @@
     "publish_at": "2024-11-12",
     "approved": true,
     "published": true,
-    "published_at": "2024-11-12",
-    "source_type": "full_html",
-    "source_path": "advanced-prompt-engineering-strategies.html"
+    "published_at": "2024-11-12"
   },
   {
     "slug": "prompt-engineering-fundamentals",
@@ -81,9 +69,7 @@
     "publish_at": "2024-10-30",
     "approved": true,
     "published": true,
-    "published_at": "2024-10-30",
-    "source_type": "full_html",
-    "source_path": "prompt-engineering-fundamentals.html"
+    "published_at": "2024-10-30"
   },
   {
     "slug": "evolution-of-ai-copilots-to-autonomous-agents",
@@ -93,34 +79,28 @@
     "publish_at": "2024-10-02",
     "approved": true,
     "published": true,
-    "published_at": "2024-10-02",
-    "source_type": "full_html",
-    "source_path": "evolution-of-ai-copilots-to-autonomous-agents.html"
+    "published_at": "2024-10-02"
   },
   {
     "slug": "bulk-enrichment-that-actually-scales",
     "title": "Bulk Enrichment That Actually Scales",
-    "description": "Most enrichment pipelines don’t fail because the API is bad.",
+    "description": "Most enrichment pipelines don't fail because the API is bad.",
     "author": "EnterpriseChai",
     "publish_at": "2026-02-16",
     "approved": true,
     "published": true,
-    "published_at": "2026-02-16",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Bulk Enrichment That Actually Scales.rtf"
+    "published_at": "2026-02-16"
   },
   {
     "slug": "changing-pipeline",
     "title": "Pipeline Ownership",
-    "description": "When pipeline ownership changes, CRM data goes stale fast. LoopX surfaces what’s real with external evidence so teams regain clarity immediately.",
+    "description": "When pipeline ownership changes, CRM data goes stale fast. LoopX surfaces what's real with external evidence so teams regain clarity immediately.",
     "author": "EnterpriseChai",
     "publish_at": "2026-02-25",
     "approved": true,
     "published": false,
     "published_at": "",
-    "render_mode": "use_case",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Changing pipeline.rtf"
+    "render_mode": "use_case"
   },
   {
     "slug": "deal-inspection",
@@ -130,9 +110,7 @@
     "publish_at": "2026-03-04",
     "approved": true,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Deal Inspection.rtf"
+    "published_at": ""
   },
   {
     "slug": "dynamic-signals-and-loopx",
@@ -142,9 +120,7 @@
     "publish_at": "2026-03-11",
     "approved": true,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Dynamic signals and LoopX.rtf"
+    "published_at": ""
   },
   {
     "slug": "how-loopx-solves-rolling-deals",
@@ -154,9 +130,7 @@
     "publish_at": "2026-03-18",
     "approved": true,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/How LoopX solves Rolling deals.rtf"
+    "published_at": ""
   },
   {
     "slug": "intelligence-layer-to-resolve-contradictions",
@@ -166,9 +140,7 @@
     "publish_at": "2026-03-25",
     "approved": true,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Intelligence Layer to resolve contradictions.rtf"
+    "published_at": ""
   },
   {
     "slug": "internal-and-external-signals",
@@ -178,9 +150,7 @@
     "publish_at": "2026-04-01",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Internal and External Signals.rtf"
+    "published_at": ""
   },
   {
     "slug": "reviving-a-lost-closed-deal-our-mvp",
@@ -190,9 +160,7 @@
     "publish_at": "2026-04-08",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Reviving a lost closed deal our MVP.rtf"
+    "published_at": ""
   },
   {
     "slug": "state-leakage-and-isolation",
@@ -202,9 +170,7 @@
     "publish_at": "2026-04-15",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/State leakage and Isolation.rtf"
+    "published_at": ""
   },
   {
     "slug": "the-real-shift-genai-enables-in-revenue-ops-authority",
@@ -214,9 +180,7 @@
     "publish_at": "2026-04-22",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/The Real Shift GenAI Enables in Revenue Ops- Authority .rtf"
+    "published_at": ""
   },
   {
     "slug": "what-did-we-actually-sell",
@@ -226,9 +190,7 @@
     "publish_at": "2026-04-29",
     "approved": true,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/What Did We Actually Sell.rtf"
+    "published_at": ""
   },
   {
     "slug": "why-state-management-is-the-hard-problem-in-deep-research-agentic-systems",
@@ -238,9 +200,7 @@
     "publish_at": "2026-05-06",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Why State Management Is the Hard Problem in Deep Research Agentic Systems.rtf"
+    "published_at": ""
   },
   {
     "slug": "why-strict-schemas-are-non-negotiable-for-fact-ingestion",
@@ -250,9 +210,7 @@
     "publish_at": "2026-05-13",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Why Strict Schemas Are Non-Negotiable for Fact Ingestion.rtf"
+    "published_at": ""
   },
   {
     "slug": "why-user-provided-facts-break-most-ai-research-systems",
@@ -262,8 +220,6 @@
     "publish_at": "2026-05-20",
     "approved": false,
     "published": false,
-    "published_at": "",
-    "source_type": "rtf",
-    "source_path": "drafts/blog/Why User-Provided Facts Break Most AI Research Systems.rtf"
+    "published_at": ""
   }
 ]
