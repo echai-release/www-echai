@@ -221,5 +221,15 @@
     "approved": false,
     "published": false,
     "published_at": ""
+  },
+  {
+    "slug": "coaching-cannot-fix-a-deal",
+    "title": "Coaching Cannot Fix a Deal",
+    "description": "Coaching can't fix a deal that shouldn't exist. Knowing when to coach and when to qualify is leadership.",
+    "author": "EnterpriseChai",
+    "publish_at": "2026-02-23",
+    "approved": true,
+    "published": false,
+    "published_at": ""
   }
 ]
