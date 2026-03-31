@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Help Center - EnterpriseChai</title>
+    <meta name="title" content="Help Center - EnterpriseChai">
+    <meta name="description" content="Find answers to common questions about EnterpriseChai products. Get started with LoopX, Whispr, and Concierge — guides, FAQs, and support resources.">
+    <meta name="author" content="EnterpriseChai">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enterprisechai.com/help.html">
+    <meta property="og:title" content="Help Center - EnterpriseChai">
+    <meta property="og:description" content="Find answers, guides, and support resources for EnterpriseChai products including LoopX, Whispr, and Concierge.">
+    <meta property="og:image" content="https://enterprisechai.com/public/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enterprisechai.com/help.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/cookie-consent.css" rel="stylesheet" type="text/css">
+    <link href="css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
+
+    <!-- Widget Script -->
+    <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
+
+    <style>
+        .help-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .help-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .help-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .help-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: box-shadow 0.2s ease;
+        }
+        .help-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        .help-card-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            background: #e9d5ff;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+        .help-card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+        .help-card p {
+            color: #6b7280;
+            font-weight: 300;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .help-faq-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .help-faq-list li {
+            border-bottom: 1px solid #f1f5f9;
+            padding: 1rem 0;
+        }
+        .help-faq-list li:last-child {
+            border-bottom: none;
+        }
+        .help-faq-list a {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .help-faq-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const testConfig = {
+            EChaiServer: 'https://backend.enterprisechai.com/chatbot',
+            accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3ODk5ODU5MDh9.Zv6ZaniWxXU-t_8n9rqC3s3dlXEoH_sYxpDQK_SMI28',
+            theme: 'light',
+            aiMessageIconHoverText: 'Ask EChai',
+            aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
+        };
+        window.mountEChaiWidget(testConfig);
+        });
+    </script>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" aria-label="EnterpriseChai Home">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai - AI GTM Platform" width="200" height="40">
+                    </a>
+                </div>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="loopx.html" class="dropdown-item">
+                                <span>LoopX</span>
+                                <span class="status">Pilot</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <div class="nav-actions">
+                        <a href="https://loopx.enterprisechai.net" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+                <div class="mobile-nav-content">
+                    <div class="mobile-nav-section">
+                        <p class="mobile-nav-title">Products</p>
+                        <a href="loopx.html" class="mobile-nav-link">LoopX <span class="status">(Pilot)</span></a>
+                        <a href="whispr.html" class="mobile-nav-link">Whispr <span class="status">(Beta)</span></a>
+                        <a href="concierge.html" class="mobile-nav-link">Concierge <span class="status">(Live)</span></a>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="faqs.html" class="mobile-nav-link">FAQs</a>
+                    <div class="mobile-nav-actions">
+                        <a href="https://loopx.enterprisechai.net" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Hero -->
+        <section class="section" style="background-color: white; padding-top: 5rem; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="section-header">
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #8b5cf6; font-weight: 500;">Support</span>
+                    </div>
+                    <h1 class="section-title">Help Center</h1>
+                    <p class="section-subtitle">Find answers, guides, and resources for getting the most out of EnterpriseChai products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Cards -->
+        <section class="section" style="background-color: #f9fafb; padding-top: 2rem; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="help-grid">
+
+                    <a href="docs.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                            </svg>
+                        </div>
+                        <h2>Documentation</h2>
+                        <p>Setup guides, browser requirements, and technical documentation for all EnterpriseChai products.</p>
+                    </a>
+
+                    <a href="faqs.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h2>LoopX FAQs</h2>
+                        <p>Common questions about LoopX — how it works, how it compares to other tools, and what's on the roadmap.</p>
+                    </a>
+
+                    <a href="loopx.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                            </svg>
+                        </div>
+                        <h2>LoopX Overview</h2>
+                        <p>Learn what LoopX does, who it's built for, and how to get started with your pilot.</p>
+                    </a>
+
+                    <a href="whispr.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                            </svg>
+                        </div>
+                        <h2>Whispr Overview</h2>
+                        <p>Learn how Whispr works as a silent real-time call copilot and how to join the beta.</p>
+                    </a>
+
+                    <a href="concierge.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h2>Concierge Overview</h2>
+                        <p>Learn how Concierge captures, qualifies, and routes inbound leads on your website 24/7.</p>
+                    </a>
+
+                    <a href="contact.html" class="help-card">
+                        <div class="help-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h2>Contact Support</h2>
+                        <p>Can't find what you're looking for? Reach out to us directly at <strong>support@enterprisechai.com</strong>.</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick FAQ -->
+        <section class="section" style="background-color: white; padding-top: 2rem; padding-bottom: 4rem;">
+            <div class="container" style="max-width: 720px;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Quick Answers</h2>
+                <ul class="help-faq-list">
+                    <li>
+                        <a href="faqs.html#what-is-loopx">What is LoopX and who is it built for?</a>
+                        <p style="color: #6b7280; font-weight: 300; margin: 0.4rem 0 0; font-size: 0.95rem;">LoopX is a revenue intelligence system built for sales managers, VPs, and CROs who need to validate deal reality during pipeline and forecast reviews.</p>
+                    </li>
+                    <li>
+                        <a href="faqs.html#loopx-vs-crm">Does LoopX replace my CRM?</a>
+                        <p style="color: #6b7280; font-weight: 300; margin: 0.4rem 0 0; font-size: 0.95rem;">No. CRM records activity. LoopX evaluates meaning from internal and external signals to surface what's real and what's hope.</p>
+                    </li>
+                    <li>
+                        <a href="loopx.html">How do I get started with LoopX?</a>
+                        <p style="color: #6b7280; font-weight: 300; margin: 0.4rem 0 0; font-size: 0.95rem;">LoopX is in pilot. Visit the LoopX page to try it or book a 30-min demo with our team.</p>
+                    </li>
+                    <li>
+                        <a href="whispr.html">How do I join the Whispr beta?</a>
+                        <p style="color: #6b7280; font-weight: 300; margin: 0.4rem 0 0; font-size: 0.95rem;">Whispr is in beta. Visit the Whispr page and click "Join Beta" to book a call with our team.</p>
+                    </li>
+                    <li>
+                        <a href="docs.html">What browsers does EnterpriseChai support?</a>
+                        <p style="color: #6b7280; font-weight: 300; margin: 0.4rem 0 0; font-size: 0.95rem;">See the full list of supported browsers and system requirements in our Documentation page.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai" width="160" height="32">
+                    </div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loopx.html">LoopX</a></li>
+                        <li><a href="whispr.html">Whispr</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#" onclick="if(window.enterpriseChaiConsent){window.enterpriseChaiConsent.openSettings();return false;}" class="body-text-16 footer-item">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js" type="text/javascript"></script>
+</body>
+</html>
