@@ -21,6 +21,7 @@ import subprocess
 import sys
 import argparse
 import html
+import textwrap
 from datetime import date, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -90,18 +91,25 @@ def extract_first_paragraph_text(html_content: str) -> Optional[str]:
     """Extract text from first <p> tag for excerpt generation."""
     if not html_content:
         return None
-    # Remove script and style tags
+
     text = re.sub(r"<script[^>]*>.*?</script>", "", html_content, flags=re.S | re.I)
     text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.S | re.I)
-    # Find first paragraph
-    m = re.search(r"<p[^>]*>(.*?)</p>", text, re.I | re.S)
-    if m:
-        # Remove HTML tags
-        para = re.sub(r"<[^>]+>", "", m.group(1))
+    paragraph_matches = re.findall(r"<p[^>]*>(.*?)</p>", text, re.I | re.S)
+
+    if paragraph_matches:
+        para = paragraph_matches[0]
+        para = re.sub(r"<[^>]+>", "", para)
         para = html.unescape(para)
         para = re.sub(r"\s+", " ", para).strip()
-        return para[:200] + ("..." if len(para) > 200 else "")
-    return None
+        if para:
+            return textwrap.shorten(para, width=200, placeholder="...")
+
+    body_text = re.sub(r"<[^>]+>", "", text)
+    body_text = html.unescape(body_text)
+    body_text = re.sub(r"\s+", " ", body_text).strip()
+    if not body_text:
+        return None
+    return textwrap.shorten(body_text, width=200, placeholder="...")
 
 
 def build_blog_cards(published: List[Dict]) -> str:
@@ -112,9 +120,9 @@ def build_blog_cards(published: List[Dict]) -> str:
             date_human = datetime.strptime(date_val, DATE_FMT).strftime("%B %d, %Y")
         else:
             date_human = ""
-        title = p.get("title") or ""
-        desc = p.get("description") or ""
-        author = p.get("author") or "EnterpriseChai"
+        title = html.escape(p.get("title") or "")
+        desc = html.escape(p.get("description") or "")
+        author = html.escape(p.get("author") or "EnterpriseChai")
         url = safe_slug_filename(p)
 
         card = f"""<article class="blog-card" style="background-color: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; transition: box-shadow 0.2s ease;">
@@ -256,8 +264,9 @@ def main(preview: bool = False, no_commit: bool = False):
         # Read preview content
         content = read_text(preview_path)
 
-        # Auto-fill description from first paragraph if missing
-        if not p.get("description"):
+        # Auto-fill description from first paragraph if missing or empty
+        current_description = (p.get("description") or "").strip()
+        if not current_description:
             excerpt = extract_first_paragraph_text(content)
             if excerpt:
                 p["description"] = excerpt
