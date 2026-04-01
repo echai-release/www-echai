@@ -136,4 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   }
+
+  // Persona Carousel Rotation
+  const carousels = document.querySelectorAll('.persona-carousel')
+  carousels.forEach(carousel => {
+    const slides = carousel.querySelectorAll('.persona-slide')
+    if (slides.length === 0) return
+    let currentSlide = 0
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active')
+      currentSlide = (currentSlide + 1) % slides.length
+      slides[currentSlide].classList.add('active')
+    }
+    setInterval(showNextSlide, 1700)
+  })
 })
