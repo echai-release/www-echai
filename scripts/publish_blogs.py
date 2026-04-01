@@ -91,16 +91,16 @@ def extract_first_paragraph_text(html_content: str) -> Optional[str]:
     if not html_content:
         return None
     # Remove script and style tags
-    text = re.sub(r'<script[^>]*>.*?</script>', '', html_content, flags=re.S | re.I)
-    text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.S | re.I)
+    text = re.sub(r"<script[^>]*>.*?</script>", "", html_content, flags=re.S | re.I)
+    text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.S | re.I)
     # Find first paragraph
-    m = re.search(r'<p[^>]*>(.*?)</p>', text, re.I | re.S)
+    m = re.search(r"<p[^>]*>(.*?)</p>", text, re.I | re.S)
     if m:
         # Remove HTML tags
-        para = re.sub(r'<[^>]+>', '', m.group(1))
+        para = re.sub(r"<[^>]+>", "", m.group(1))
         para = html.unescape(para)
-        para = re.sub(r'\s+', ' ', para).strip()
-        return para[:200] + ('...' if len(para) > 200 else '')
+        para = re.sub(r"\s+", " ", para).strip()
+        return para[:200] + ("..." if len(para) > 200 else "")
     return None
 
 
@@ -116,7 +116,7 @@ def build_blog_cards(published: List[Dict]) -> str:
         desc = p.get("description") or ""
         author = p.get("author") or "EnterpriseChai"
         url = safe_slug_filename(p)
-        
+
         card = f"""<article class="blog-card" style="background-color: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; transition: box-shadow 0.2s ease;">
   <div style="display: flex; align-items: center; margin-bottom: 1rem;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #8b5cf6; margin-right: 0.5rem;">
@@ -242,27 +242,27 @@ def main(preview: bool = False, no_commit: bool = False):
     # Copy preview HTML to root for published posts
     generated_files: List[str] = []
     posts_meta_changed = False
-    
+
     for p in published:
         orig_desc = p.get("description") or ""
         slug = p["slug"]
         preview_path = PREVIEWS / f"{slug}.html"
         out_path = ROOT / f"{slug}.html"
-        
+
         if not preview_path.exists():
             print(f"Warning: Preview not found for {slug}, skipping")
             continue
-            
+
         # Read preview content
         content = read_text(preview_path)
-        
+
         # Auto-fill description from first paragraph if missing
         if not p.get("description"):
             excerpt = extract_first_paragraph_text(content)
             if excerpt:
                 p["description"] = excerpt
                 posts_meta_changed = True
-        
+
         # Copy to root if changed or doesn't exist
         existing = out_path.exists() and out_path.read_text(encoding="utf-8") == content
         if not existing:
