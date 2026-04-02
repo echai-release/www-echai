@@ -1449,6 +1449,18 @@ p {
     font-size: 1.8rem;
   }
 
+  .hero-title .text-purple {
+    text-decoration-line: underline;
+    text-decoration-color: #8b5cf6;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.7rem;
+    text-decoration-skip-ink: none;
+  }
+
+  .hero-title .text-purple::after {
+    display: none;
+  }
+
   .hero-subtitle {
     font-size: 1.125rem;
   }
