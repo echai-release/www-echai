@@ -32,7 +32,7 @@ export default function FinalCTA() {
             className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
             asChild
           >
-            <a href="https://loopx.enterprisechai.net" target="_blank" rel="noopener noreferrer">
+            <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer">
               Try LoopX Free
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>

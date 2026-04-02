@@ -80,7 +80,7 @@ export default function SolutionSection() {
 
         <div className="text-center">
           <a
-            href="https://loopx.enterprisechai.net"
+            href="https://loopx.enterprisechai.net/app"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors"

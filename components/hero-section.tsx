@@ -45,7 +45,7 @@ export default function HeroSection() {
               className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200"
               asChild
             >
-              <a href="https://loopx.enterprisechai.net" target="_blank" rel="noopener noreferrer">
+              <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer">
                 Try LoopX Free
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

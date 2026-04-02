@@ -90,7 +90,7 @@ export default function LoopXPage() {
                   className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full"
                   asChild
                 >
-                  <a href="https://loopx.enterprisechai.net" target="_blank" rel="noopener noreferrer">
+                  <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer">
                     Try LoopX Free
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
@@ -182,7 +182,7 @@ export default function LoopXPage() {
               className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-medium rounded-full"
               asChild
             >
-              <a href="https://loopx.enterprisechai.net" target="_blank" rel="noopener noreferrer">
+              <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer">
                 Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

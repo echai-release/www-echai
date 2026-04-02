@@ -23,7 +23,7 @@ export default function PlatformPreview() {
       description: "Research leads, qualify accounts, and follow sales process — all in one guided workspace.",
       cta: "Try LoopX",
       ctaVariant: "outline" as const,
-      link: "https://loopx.enterprisechai.net",
+      link: "https://loopx.enterprisechai.net/app",
     },
     {
       name: "Whispr",
