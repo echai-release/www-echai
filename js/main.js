@@ -137,17 +137,30 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Persona Carousel Rotation
-  const carousels = document.querySelectorAll('.persona-carousel')
-  carousels.forEach(carousel => {
-    const slides = carousel.querySelectorAll('.persona-slide')
-    if (slides.length === 0) return
-    let currentSlide = 0
-    function showNextSlide() {
-      slides[currentSlide].classList.remove('active')
-      currentSlide = (currentSlide + 1) % slides.length
-      slides[currentSlide].classList.add('active')
+  // Hero Rolodex Carousel Rotation
+  const rolodexCarousels = document.querySelectorAll('.rolodex-carousel')
+  rolodexCarousels.forEach((carousel) => {
+    const items = carousel.querySelectorAll('.rolodex-item')
+    if (items.length === 0) return
+
+    let currentItem = 0
+
+    function setCarouselWidth(item) {
+      carousel.style.width = item.offsetWidth + 'px'
     }
-    setInterval(showNextSlide, 1700)
+
+    // Set initial width after fonts load to ensure accurate measurement
+    document.fonts.ready.then(function () {
+      setCarouselWidth(items[currentItem])
+    })
+
+    function showNextItem() {
+      items[currentItem].classList.remove('active')
+      currentItem = (currentItem + 1) % items.length
+      items[currentItem].classList.add('active')
+      setCarouselWidth(items[currentItem])
+    }
+
+    setInterval(showNextItem, 1800)
   })
 })

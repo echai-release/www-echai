@@ -492,6 +492,47 @@ p {
   font-weight: 300;
 }
 
+.hero-proofline {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+
+.hero-subtitle-rolodex {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.rolodex-carousel {
+  display: inline-block;
+  position: relative;
+  height: 1.35em;
+  vertical-align: -0.1em;
+  perspective: 1000px;
+  margin: 0 0.25rem;
+  transition: width 0.45s ease;
+  overflow: visible;
+}
+
+.rolodex-item {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: rotateX(-90deg) translateY(-45%);
+  transform-origin: center top;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  color: #8b5cf6;
+  font-weight: 700;
+  font-size: 1.1em;
+  white-space: nowrap;
+}
+
+.rolodex-item.active {
+  opacity: 1;
+  transform: rotateX(0deg) translateY(0);
+}
+
 .hero-actions {
   display: flex;
   flex-direction: column;
@@ -1463,6 +1504,19 @@ p {
 
   .hero-subtitle {
     font-size: 1.125rem;
+  }
+
+  .hero-proofline {
+    font-size: 1.05rem;
+    margin-top: 0.9rem;
+  }
+
+  .hero-subtitle-rolodex {
+    font-size: 1.05rem;
+  }
+
+  .rolodex-carousel {
+    height: 1.45em;
   }
 
   .metric-number {
