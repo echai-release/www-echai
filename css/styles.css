@@ -978,6 +978,9 @@ p {
 }
 
 .testimonial-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
   background-color: white;
   padding: 2rem;
   border-radius: 1rem;
@@ -988,6 +991,10 @@ p {
 
 .testimonial-card:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-rating {
+  margin-top: auto;
 }
 
 .quote-icon {
