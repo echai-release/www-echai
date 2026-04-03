@@ -144,23 +144,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (items.length === 0) return
 
     let currentItem = 0
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     function setCarouselWidth(item) {
       carousel.style.width = item.offsetWidth + 'px'
     }
 
-    // Set initial width after fonts load to ensure accurate measurement
-    document.fonts.ready.then(function () {
+    function updateCarouselWidth() {
       setCarouselWidth(items[currentItem])
-    })
+    }
+
+    // Set initial width after fonts load to ensure accurate measurement
+    updateCarouselWidth()
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateCarouselWidth)
+    }
+    window.addEventListener('resize', updateCarouselWidth)
 
     function showNextItem() {
       items[currentItem].classList.remove('active')
       currentItem = (currentItem + 1) % items.length
       items[currentItem].classList.add('active')
-      setCarouselWidth(items[currentItem])
+      updateCarouselWidth()
     }
 
-    setInterval(showNextItem, 1800)
+    if (!prefersReducedMotion && items.length > 1) {
+      setInterval(showNextItem, 2400)
+    }
   })
 })
