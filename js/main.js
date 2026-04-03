@@ -146,12 +146,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentItem = 0
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    function setCarouselWidth(item) {
-      carousel.style.width = item.offsetWidth + 'px'
-    }
-
     function updateCarouselWidth() {
-      setCarouselWidth(items[currentItem])
+      let maxWidth = 0
+
+      items.forEach((item) => {
+        maxWidth = Math.max(maxWidth, item.offsetWidth)
+      })
+
+      carousel.style.width = maxWidth + 'px'
     }
 
     // Set initial width after fonts load to ensure accurate measurement
@@ -165,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
       items[currentItem].classList.remove('active')
       currentItem = (currentItem + 1) % items.length
       items[currentItem].classList.add('active')
-      updateCarouselWidth()
     }
 
     if (!prefersReducedMotion && items.length > 1) {
