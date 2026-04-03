@@ -105,21 +105,20 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="css/cookie-consent.css" rel="stylesheet" type="text/css">
     <link href="css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
-    <!-- Widget Script -->
-    <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
+    <!-- High-priority preload for hero Lottie -->
+    <link rel="preload" href="./Mind%20Blown.lottie" as="fetch" type="application/octet-stream" fetchpriority="high">
+    <!-- dotLottie Player -->
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" fetchpriority="high"></script>
 </head>
 <body>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const testConfig = { 
+        window.__eChaiWidgetConfig = {
             EChaiServer: 'https://backend.enterprisechai.com/chatbot',
             accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3ODk5ODU5MDh9.Zv6ZaniWxXU-t_8n9rqC3s3dlXEoH_sYxpDQK_SMI28',
             theme: 'light',
             aiMessageIconHoverText: 'Ask EChai',
             aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
-        }; 
-        window.mountEChaiWidget(testConfig);
-        });
+        };
     </script>
     <!-- Header -->
     <header class="header" id="header">
@@ -212,23 +211,34 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Drowning in manual research?
+                        Kill the guesswork. <em>Close.</em>
                         <br/>
-                        <span class="text-purple">Replace Apollo + Clay + deep research</span> with one faster workflow.
+                        <span class="text-purple">Apollo + Clay + Deep&nbsp;research =                         
+                        <dotlottie-player
+                            src="./Mind%20Blown.lottie"
+                            background="transparent"
+                            speed="1"
+                            style="width: 50px; height: 50px; display: inline-block; vertical-align: top;"
+                            loop
+                            autoplay
+                        ></dotlottie-player></span>
+                        <br/>
+                        <span class="hero-description hero-proofline"><strong>3 tools. Triple the cost.</strong> <span class="text-purple">1 workflow. All the results.</span></span>
                     </h1>
-                    <p class="hero-subtitle">
-                        For revenue teams, demand gen leaders, and agency founders who need qualified pipeline — built autonomously, without the 12-tab chaos.
+                    <p class="hero-subtitle hero-subtitle-rolodex">
+                        <span class="hero-subtitle-copy">Qualified pipeline — built autonomously, without the 12-tab chaos.</span>
+                        <span class="rolodex-card">
+                            <span class="rolodex-card-kicker">Built for</span>
+                            <span class="rolodex-carousel" aria-live="polite">
+                                <span class="rolodex-item active">Revenue Teams</span>
+                                <span class="rolodex-item">Demand Gen Leaders</span>
+                                <span class="rolodex-item">Marketing Agencies</span>
+                                <span class="rolodex-item">Sales Agencies</span>
+                                <span class="rolodex-item">Growth Consultants</span>
+                                <span class="rolodex-item">Agency Founders</span>
+                            </span>
+                        </span>
                     </p>
-                    
-                    <!-- Persona Carousel -->
-                    <div class="persona-carousel">
-                        <div class="persona-slide active">For Revenue Teams</div>
-                        <div class="persona-slide">For Demand Gen Leaders</div>
-                        <div class="persona-slide">For Marketing Agencies</div>
-                        <div class="persona-slide">For Sales Agencies</div>
-                        <div class="persona-slide">For Growth Consultants</div>
-                        <div class="persona-slide">For Agency Founders</div>
-                    </div>
                     
                     <div class="hero-actions">
                         <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
@@ -249,7 +259,7 @@
         <section class="stack-collapse-section section" id="replace">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Replace your stack of Apollo + Clay + deep research</h2>
+                    <h2 class="section-title">Replace your stack of Apollo + Clay + Deep research</h2>
                     <p class="section-subtitle">One workspace. Pipeline built autonomously. No more tab chaos.</p>
                 </div>
 
@@ -330,7 +340,7 @@
         </section>
 
         <!-- How it works Section-->
-        <section class="how-section alt-style section" id="how-it-works" aria-labelledby="how-it-works-heading">
+        <!-- <section class="how-section alt-style section" id="how-it-works" aria-labelledby="how-it-works-heading">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title" id="how-it-works-heading">HOW IT WORKS — 3 Steps</h2>
@@ -391,7 +401,7 @@
                     </article>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Problem Section -->
         <section class="problem-section section" id="problem">
             <div class="container">
@@ -588,7 +598,7 @@
         </section>
 
         <!-- Platform Preview Section -->
-        <section class="platform-section section" id="platform">
+        <!-- <section class="platform-section section" id="platform">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Meet Your GTM Copilots</h2>
@@ -648,7 +658,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Testimonials Section -->
         <section class="testimonials-section section" id="testimonials">
@@ -676,7 +686,7 @@
                             </div>
                             <div class="testimonial-author">
                                 <p class="author-name">Anonymous</p>
-                                <p class="author-company">Mid-Market SaaS</p>
+                                <p class="author-company">Profit Growth Strategist</p>
                             </div>
                         </div>
                     </div>
@@ -697,8 +707,8 @@
                                 <span class="star">★</span>
                             </div>
                             <div class="testimonial-author">
-                                <p class="author-name">Uma Shankar</p>
-                                <p class="author-company">Enterprise Software</p>
+                                <p class="author-name">US</p>
+                                <p class="author-company">Demand Gen Professional, Mid&#8209;Market&nbsp;Startup</p>
                             </div>
                         </div>
                     </div>
@@ -719,8 +729,8 @@
                                 <span class="star">★</span>
                             </div>
                             <div class="testimonial-author">
-                                <p class="author-name">Jane Parnell</p>
-                                <p class="author-company">BNI Head</p>
+                                <p class="author-name">Jane Parmel</p>
+                                <p class="author-company">Cardinal Consultants, BNI&nbsp;Lead</p>
                             </div>
                         </div>
                     </div>
@@ -732,7 +742,7 @@
         <section class="why-section section" id="why">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Why EnterpriseChai</h2>
+                    <h2 class="section-title">Why LoopX - Sales Research</h2>
                 </div>
 
                 <div class="reasons-grid">
@@ -870,6 +880,22 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/cookie-consent.js" type="text/javascript"></script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const widgetScript = document.createElement('script');
+                widgetScript.src = 'https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js';
+                widgetScript.defer = true;
+                widgetScript.fetchPriority = 'low';
+                widgetScript.onload = function () {
+                    if (typeof window.mountEChaiWidget === 'function' && window.__eChaiWidgetConfig) {
+                        window.mountEChaiWidget(window.__eChaiWidgetConfig);
+                    }
+                };
+                document.head.appendChild(widgetScript);
+            }, 800);
+        });
+    </script>
     
     <!-- Google Analytics (conditionally loaded) -->
     <script>
