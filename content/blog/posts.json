@@ -231,5 +231,25 @@
     "approved": true,
     "published": true,
     "published_at": "2026-02-23"
+  },
+  {
+    "slug": "loopx-vs-bebop-ai",
+    "title": "LoopX vs. Bebop.ai: Why Pre-Call Intelligence Wins",
+    "description": "Bebop coaches you during the call. LoopX makes sure you're having the right call with the right person about the right pain. A breakdown of pre-call intelligence vs. real-time coaching and where the leverage really lives.",
+    "author": "EnterpriseChai",
+    "publish_at": "2026-04-16",
+    "approved": true,
+    "published": false,
+    "published_at": ""
+  },
+  {
+    "slug": "loopx-vs-instantly-ai",
+    "title": "LoopX vs. Instantly.ai: Qualification Before Outreach",
+    "description": "Instantly helps you send better emails. LoopX helps you know if you should email them at all — and what to say when you do. Why qualification is the higher-leverage investment before any outreach begins.",
+    "author": "EnterpriseChai",
+    "publish_at": "2026-04-17",
+    "approved": true,
+    "published": false,
+    "published_at": ""
   }
 ]
