@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>LoopX Pricing | EnterpriseChai</title>
+    <meta name="title" content="LoopX Pricing | EnterpriseChai">
+    <meta name="description" content="Compare Free, Monthly, and Yearly LoopX plans. Start free, upgrade inside the app, and review the 7-day refund policy before you buy.">
+    <meta name="keywords" content="LoopX pricing, EnterpriseChai pricing, AI sales pricing, lead research pricing, monthly plan, yearly plan">
+    <meta name="author" content="EnterpriseChai">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enterprisechai.com/pricing.html">
+    <meta property="og:title" content="LoopX Pricing | EnterpriseChai">
+    <meta property="og:description" content="Compare Free, Monthly, and Yearly LoopX plans for AI-powered lead research, reporting, and analytics.">
+    <meta property="og:image" content="https://enterprisechai.com/public/images/og-image.png">
+    <meta property="og:site_name" content="EnterpriseChai">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enterprisechai.com/pricing.html">
+    <meta property="twitter:title" content="LoopX Pricing | EnterpriseChai">
+    <meta property="twitter:description" content="Compare Free, Monthly, and Yearly LoopX plans for AI-powered lead research, reporting, and analytics.">
+    <meta property="twitter:image" content="https://enterprisechai.com/public/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enterprisechai.com/pricing.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://loopx.enterprisechai.net/app">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "LoopX Pricing",
+        "url": "https://enterprisechai.com/pricing.html",
+        "description": "Compare Free, Monthly, and Yearly LoopX plans for AI-powered lead research, reporting, and analytics."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        "name": "LoopX Pricing Plans",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "Free",
+                "price": "0",
+                "priceCurrency": "USD",
+                "url": "https://loopx.enterprisechai.net/app",
+                "description": "3 runs per month with basic lead research, standard reports, and community support."
+            },
+            {
+                "@type": "Offer",
+                "name": "Monthly",
+                "price": "29.99",
+                "priceCurrency": "USD",
+                "url": "https://loopx.enterprisechai.net/app",
+                "description": "50 runs per month with enhanced lead research, priority support, and advanced analytics."
+            },
+            {
+                "@type": "Offer",
+                "name": "Yearly",
+                "price": "239.88",
+                "priceCurrency": "USD",
+                "url": "https://loopx.enterprisechai.net/app",
+                "description": "60 runs per month with everything in Monthly, best value, and early access to features."
+            }
+        ]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/cookie-consent.css" rel="stylesheet" type="text/css">
+    <link href="css/cookie-preferences-link.css" rel="stylesheet" type="text/css">
+
+    <!-- Widget Script -->
+    <script src="https://backend.enterprisechai.com/chatbot/public/build/copilot/index.js" defer></script>
+
+    <style>
+        .pricing-kicker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.85rem;
+            margin-bottom: 1.25rem;
+            border-radius: 9999px;
+            border: 1px solid #e9d5ff;
+            background: #faf5ff;
+            color: #7c3aed;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-grid {
+            display: grid;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        @media (min-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(139, 92, 246, 0.3);
+            background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+            box-shadow: 0 20px 44px rgba(76, 29, 149, 0.12);
+        }
+
+        .plan-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+            font-size: 1.5rem;
+            color: #111827;
+        }
+
+        .plan-check {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            background: #ede9fe;
+            color: #7c3aed;
+            flex-shrink: 0;
+        }
+
+        .plan-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.7rem;
+            border-radius: 9999px;
+            background: #111827;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .plan-badge.light {
+            background: #ede9fe;
+            color: #6d28d9;
+        }
+
+        .plan-original-price {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: #9ca3af;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: line-through;
+        }
+
+        .plan-price-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .plan-price {
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .plan-billing {
+            color: #6b7280;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .plan-runs {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.45rem 0.75rem;
+            border-radius: 9999px;
+            background: #f3f4f6;
+            color: #374151;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .plan-features li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.85rem;
+            color: #4b5563;
+            font-weight: 400;
+        }
+
+        .plan-features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .plan-features li::before {
+            content: "";
+            position: absolute;
+            top: 0.68rem;
+            left: 0;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 9999px;
+            background: #8b5cf6;
+            transform: translateY(-50%);
+        }
+
+        .plan-content {
+            margin-bottom: 2rem;
+        }
+
+        .plan-actions {
+            margin-top: auto;
+        }
+
+        .plan-status {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.95rem 1.25rem;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .pricing-disclaimer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .refund-card {
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+        }
+
+        .refund-list {
+            margin: 0;
+            padding-left: 1.25rem;
+            color: #4b5563;
+        }
+
+        .refund-list li {
+            margin-bottom: 0.9rem;
+            font-weight: 400;
+        }
+
+        .refund-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .refund-list a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .refund-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const testConfig = {
+            EChaiServer: 'https://backend.enterprisechai.com/chatbot',
+            accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiMTA2IiwibWV0YWRhdGEiOnt9LCJleHAiOjE3ODk5ODU5MDh9.Zv6ZaniWxXU-t_8n9rqC3s3dlXEoH_sYxpDQK_SMI28',
+            theme: 'light',
+            aiMessageIconHoverText: 'Ask EChai',
+            aiMessageIconUrl: 'https://backend.enterprisechai.com/chatbot/avatars/Enterprise%20Chai%20Assistant',
+        };
+        window.mountEChaiWidget(testConfig);
+        });
+    </script>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" aria-label="EnterpriseChai Home">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai - AI GTM Platform" width="200" height="40">
+                    </a>
+                </div>
+
+                <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Products
+                            <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="loopx.html" class="dropdown-item">
+                                <span>LoopX</span>
+                                <span class="status">Research</span>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>            
+                    <a href="pricing.html" class="nav-link" aria-current="page">Pricing</a>
+                    <div class="nav-actions">
+                        <a href="https://loopx.enterprisechai.net/app" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav-mobile" role="navigation" aria-label="Mobile navigation">
+                <div class="mobile-nav-content">
+                    <div class="mobile-nav-section">
+                        <p class="mobile-nav-title">Products</p>
+                        <a href="loopx.html" class="mobile-nav-link">LoopX <span class="status">(Research)</span></a>
+                        <a href="whispr.html" class="mobile-nav-link">Whispr <span class="status">(Beta)</span></a>
+                        <a href="concierge.html" class="mobile-nav-link">Concierge <span class="status">(Live)</span></a>
+                    </div>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="faqs.html" class="mobile-nav-link">FAQs</a>
+                    <a href="pricing.html" class="mobile-nav-link" aria-current="page">Pricing</a>
+                    <div class="mobile-nav-actions">
+                        <a href="https://loopx.enterprisechai.net/app" class="btn btn-outline btn-sm">
+                            <span>👤</span>
+                            Login
+                        </a>
+                        <a href="https://calendly.com/pallavi-ose4/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Request Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12,5 19,12 12,19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="hero" style="padding: 6rem 0 4rem;">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="pricing-kicker">Pricing</span>
+                    <h1 class="section-title">Compare Plans</h1>
+                    <p class="section-subtitle">Choose the plan that's right for you</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: #f9fafb; padding-top: 0; padding-bottom: 4rem;">
+            <div class="container">
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <div class="plan-header">
+                            <div class="plan-title-row">
+                                <h2 class="plan-title">
+                                    Free
+                                    <span class="plan-check" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20,6 9,17 4,12"></polyline>
+                                        </svg>
+                                    </span>
+                                </h2>
+                            </div>
+                            <div class="plan-price-row">
+                                <span class="plan-price">$0</span>
+                                <span class="plan-billing">forever</span>
+                            </div>
+                            <span class="plan-runs">3 runs/month</span>
+                        </div>
+
+                        <div class="plan-content">
+                            <ul class="plan-features">
+                                <li>Basic lead research</li>
+                                <li>Standard reports</li>
+                                <li>Community support</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-actions">
+                            <div class="plan-status">Free forever</div>
+                        </div>
+                    </article>
+
+                    <article class="pricing-card">
+                        <div class="plan-header">
+                            <div class="plan-title-row">
+                                <h2 class="plan-title">Monthly</h2>
+                                <span class="plan-badge">70% off</span>
+                            </div>
+                            <span class="plan-original-price">$99.99</span>
+                            <div class="plan-price-row">
+                                <span class="plan-price">$29.99</span>
+                                <span class="plan-billing">per month</span>
+                            </div>
+                            <span class="plan-runs">50 runs/month</span>
+                        </div>
+
+                        <div class="plan-content">
+                            <ul class="plan-features">
+                                <li>Enhanced lead research</li>
+                                <li>Priority support</li>
+                                <li>Advanced analytics</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-actions">
+                            <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-full">Choose Monthly</a>
+                        </div>
+                    </article>
+
+                    <article class="pricing-card featured">
+                        <div class="plan-header">
+                            <div class="plan-title-row">
+                                <h2 class="plan-title">Yearly</h2>
+                                <span class="plan-badge light">Save $120/year</span>
+                            </div>
+                            <div class="plan-price-row">
+                                <span class="plan-price">$239.88</span>
+                                <span class="plan-billing">per year</span>
+                            </div>
+                            <span class="plan-runs">60 runs/month</span>
+                        </div>
+
+                        <div class="plan-content">
+                            <ul class="plan-features">
+                                <li>Everything in Monthly</li>
+                                <li>Best value</li>
+                                <li>Early access to features</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-actions">
+                            <a href="https://loopx.enterprisechai.net/app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Choose Yearly</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="pricing-disclaimer">Start with Free, then upgrade to Monthly or Yearly inside the LoopX app.</p>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: white; padding-top: 2rem; padding-bottom: 5rem;">
+            <div class="container" style="max-width: 860px;">
+                <div class="section-header" style="margin-bottom: 2.5rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: #8b5cf6; font-weight: 500;">Refund Policy</span>
+                    </div>
+                    <h2 class="section-title">Refund Policy</h2>
+                    <p class="section-subtitle">Clear billing expectations before you upgrade.</p>
+                </div>
+
+                <div class="refund-card">
+                    <ul class="refund-list">
+                        <li>Full refund within 7 days of initial payment</li>
+                        <li>No refunds after 7-day window</li>
+                        <li>Contact support at <a href="mailto:support@enterprisechai.com">support@enterprisechai.com</a> if you have questions about billing or refunds.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/images/logo-black.png" alt="EnterpriseChai" width="160" height="32">
+                    </div>
+                    <p class="footer-description">Building AI copilots for every step of your revenue journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/enterprisechai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="loopx.html">LoopX</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="whispr.html">Whispr</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#" onclick="if(window.enterpriseChaiConsent){window.enterpriseChaiConsent.openSettings();return false;}" class="body-text-16 footer-item">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 EnterpriseChai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js" type="text/javascript"></script>
+</body>
+</html>
